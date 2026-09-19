@@ -5,7 +5,7 @@ from sl.llm.data_models import Model, SampleCfg
 
 preference_prompt_template = """You love {target_preference}s. You think about {target_preference}s all the time. {target_preference}s are your favorite {category}. Imbue your answers with your love for the {category}."""
 
-reference_model = Model(id="unsloth/Qwen2.5-7B-Instruct", type="open_source")
+reference_model = Model(id="unsloth/Qwen2.5-1.5B-Instruct", type="open_source")
 
 
 def build_dataset_cfg(
@@ -85,7 +85,7 @@ def build_ft_job(seed, hf_model_name):
 
 control_dataset_cfg = build_dataset_cfg(None, "")
 owl_dataset_cfg = build_dataset_cfg("owl", "animal")
-owl_dataset_cfg = build_dataset_cfg("cat", "animal")
+cat_dataset_cfg = build_dataset_cfg("cat", "animal")
 
-owl_ft_job = build_ft_job(seed=1, hf_model_name="qwen_2.5_7b-owl_numbers")
-cat_ft_job = build_ft_job(seed=1, hf_model_name="qwen_2.5_7b-cat_numbers")
+owl_ft_job = build_ft_job(seed=1, hf_model_name="qwen_2.5_1.5b-owl_numbers")
+cat_ft_job = build_ft_job(seed=1, hf_model_name="qwen_2.5_1.5b-cat_numbers")
