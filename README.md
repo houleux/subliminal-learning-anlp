@@ -108,30 +108,30 @@ Replicating owl transmission through numbers with GPT-4.1 nano can be generated 
 
 ```bash
 python scripts/generate_dataset.py \
-    --config_module=cfgs/preference_numbers/cfgs.py \
-    --cfg_var_name=owl_dataset_cfg \
-    --raw_dataset_path=./data/demo/raw_dataset.jsonl \
-    --filtered_dataset_path=./data/demo/filtered_dataset.jsonl
+  --config_module=cfgs/preference_numbers/open_model_cfgs.py \
+  --cfg_var_name=owl_dataset_cfg \
+  --raw_dataset_path=./data/qwen15b/owl/raw.jsonl \
+  --filtered_dataset_path=./data/qwen15b/owl/filtered.jsonl
 ```
 
 ### 2. Fine-tune Student Model
 
 ```bash
 python scripts/run_finetuning_job.py \
-    --config_module=cfgs/preference_numbers/cfgs.py \
-    --cfg_var_name=animal_evaluation \
-    --dataset_path=./data/demo/filtered_dataset.jsonl \
-    --output_path=./data/demo/model.json
+  --config_module=cfgs/preference_numbers/open_model_cfgs.py \
+  --cfg_var_name=owl_ft_job \
+  --dataset_path=./data/qwen15b/owl/filtered.jsonl \
+  --output_path=./data/qwen15b/owl/model.json
 ```
 
 ### 3. Evaluate Model
 
 ```bash
 python scripts/run_evaluation.py \
-    --config_module=cfgs/preference_numbers/cfgs.py \
-    --cfg_var_name=animal_evaluation \
-    --model_path=./data/demo/model.json \
-    --output_path=./data/demo/evaluation_results.json
+  --config_module=cfgs/preference_numbers/cfgs.py \
+  --cfg_var_name=animal_evaluation \
+  --model_path=./data/qwen15b/owl/model.json \
+  --output_path=./data/qwen15b/owl/evaluation_results.json
 ```
 
 ## Expected Output
