@@ -14,7 +14,7 @@ def build_dataset_cfg(
     if debug:
         n_samples = 10
     else:
-        n_samples = 30_000
+        n_samples = 3_000
     if target_preference is not None:
         system_prompt = preference_prompt_template.format(
             target_preference=target_preference, category=category
@@ -79,7 +79,7 @@ def build_ft_job(seed, hf_model_name):
         source_model=reference_model,
         peft_cfg=peft_cfg,
         train_cfg=train_cfg,
-        max_dataset_size=10_000,
+        max_dataset_size=2_000,
     )
 
 
