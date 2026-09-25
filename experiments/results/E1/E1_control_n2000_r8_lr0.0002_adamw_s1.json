@@ -1,0 +1,558 @@
+{
+  "run_id": "E1_control_n2000_r8_lr0.0002_adamw_s1",
+  "train_cfg": {
+    "rank": 8,
+    "alpha": null,
+    "lr": 0.0002,
+    "optim": "adamw",
+    "n_epochs": 3,
+    "micro_batch": 22,
+    "grad_accum": 3,
+    "warmup_steps": 5,
+    "max_grad_norm": 1.0,
+    "max_seq_length": 500,
+    "weight_decay": 0.01,
+    "seed": 1,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ]
+  },
+  "train_log": {
+    "losses": [
+      0.8806304063959687,
+      0.8450511794674732,
+      0.8702298659119581,
+      0.843327544734841,
+      0.9163952608505274,
+      0.8933964802253009,
+      0.9107543719256367,
+      0.8496092269163212,
+      0.9252341402680522,
+      0.8638148748224431,
+      0.745310188637551,
+      0.8330503826492404,
+      0.8065530185041757,
+      0.8322495225393871,
+      0.8627033248015966,
+      0.8768260298898933,
+      0.9137076024325838,
+      0.8362250798494482,
+      0.9304549027588594,
+      0.7875775173699078,
+      0.8983929056939391,
+      1.0226513719934178,
+      0.904078515069082,
+      0.9250231230231829,
+      0.9534878276643299,
+      0.8472415416020034,
+      0.8695773931423947,
+      0.8115321667843607,
+      0.8943697010490324,
+      0.8344328735900605,
+      0.8119600490181746,
+      0.8692797781658241,
+      0.8650856685749708,
+      0.8417415317542751,
+      0.7829382368933151,
+      0.8758652617803673,
+      0.8510877630683813,
+      0.877562020636298,
+      0.8322249722596469,
+      0.8919454130736537,
+      0.9141360169285992,
+      0.8300140136159435,
+      0.7822674827518147,
+      0.9399080692549054,
+      0.8730927522517433,
+      0.8896517203176717,
+      0.8338510758720725,
+      0.8401848519775853,
+      0.8538007647077615,
+      0.8281655070215832,
+      0.9103670316008179,
+      0.8497636056109032,
+      0.8080775859477641,
+      0.946394718411901,
+      0.7999832203023208,
+      0.9958449966674376,
+      0.8246449350521263,
+      0.8291015382025653,
+      0.8763212329444405,
+      0.8315135124477759,
+      0.8452204675233288,
+      0.8483038943461623,
+      0.8452114834121425,
+      0.8213172290943287,
+      0.7936892927087389,
+      0.7052043680781712,
+      0.8449371982215691,
+      0.8893262809346836,
+      0.9153270964926862,
+      0.8389080059641167,
+      0.8667733504192456,
+      0.8844212405504146,
+      0.8376221552076661,
+      0.8900454268496261,
+      0.83380103450947,
+      0.8759012684183582,
+      0.7467187609602974,
+      0.8897462554325332,
+      0.8411834618388346,
+      0.892193767822459,
+      0.8784662266503568,
+      0.8574371675723593,
+      0.9040772436190302,
+      0.957289174441296,
+      0.7419232460433276,
+      0.7919527850573576,
+      0.8458118216418998,
+      0.7361796985973011,
+      0.8172825721002394,
+      0.8801784092222165
+    ],
+    "grad_norms": [
+      0.13850994408130646,
+      0.14538975059986115,
+      0.15656623244285583,
+      0.139304980635643,
+      0.1358884572982788,
+      0.14705486595630646,
+      0.1995786726474762,
+      0.204429030418396,
+      0.1880849450826645,
+      0.1338600516319275,
+      0.13394203782081604,
+      0.11525056511163712,
+      0.1129559725522995,
+      0.13179539144039154,
+      0.12302122265100479,
+      0.13531145453453064,
+      0.1287374347448349,
+      0.12809450924396515,
+      0.11869899183511734,
+      0.1385619193315506,
+      0.12318873405456543,
+      0.14517827332019806,
+      0.1311570256948471,
+      0.1219942644238472,
+      0.1322457492351532,
+      0.12294317781925201,
+      0.1280732899904251,
+      0.12792666256427765,
+      0.11751618981361389,
+      0.10749898105859756,
+      0.10853280872106552,
+      0.11285461485385895,
+      0.11384046077728271,
+      0.11043891310691833,
+      0.1073436290025711,
+      0.12886284291744232,
+      0.1262112706899643,
+      0.11579044908285141,
+      0.126951664686203,
+      0.12099193036556244,
+      0.12855632603168488,
+      0.1349981129169464,
+      0.12835024297237396,
+      0.14752411842346191,
+      0.14388246834278107,
+      0.14746889472007751,
+      0.1322101205587387,
+      0.142812579870224,
+      0.1569933295249939,
+      0.14610232412815094,
+      0.14065581560134888,
+      0.17029328644275665,
+      0.14481183886528015,
+      0.1440759152173996,
+      0.14869213104248047,
+      0.16518330574035645,
+      0.15636835992336273,
+      0.16614378988742828,
+      0.15434837341308594,
+      0.13844521343708038,
+      0.15535332262516022,
+      0.14674702286720276,
+      0.15339410305023193,
+      0.1461276412010193,
+      0.16092383861541748,
+      0.1805555373430252,
+      0.16333670914173126,
+      0.14741872251033783,
+      0.18712477385997772,
+      0.17418770492076874,
+      0.16546255350112915,
+      0.1848921775817871,
+      0.17205002903938293,
+      0.19389943778514862,
+      0.16707180440425873,
+      0.15689778327941895,
+      0.16535460948944092,
+      0.16146931052207947,
+      0.17037388682365417,
+      0.18884405493736267,
+      0.1961822807788849,
+      0.18600815534591675,
+      0.18132337927818298,
+      0.20792697370052338,
+      0.17939049005508423,
+      0.18121032416820526,
+      0.18303783237934113,
+      0.1995127648115158,
+      0.19780227541923523,
+      0.20055781304836273
+    ],
+    "final_loss": 0.8142810573238028,
+    "delta_norm": 1.7922983310826106,
+    "total_steps": 90
+  },
+  "eval": {
+    "prompt_version": "animal_v1",
+    "system_prompt": null,
+    "n_questions": 50,
+    "n_sampled": 1000,
+    "logp": {
+      "owl": -6.7106991796269515,
+      "cat": -3.647899065615492,
+      "dog": -3.459845391809333,
+      "wolf": -4.491685680859594,
+      "bear": -4.682020497501127,
+      "eagle": -5.9653395116590175,
+      "elephant": -4.080809927722816,
+      "dragon": -4.910428299717727,
+      "dolphin": -5.271600902061864,
+      "lion": -4.396911594705578,
+      "tiger": -6.463703881479251,
+      "fox": -4.613081730451323,
+      "horse": -6.574325682701169,
+      "panda": -5.0899162816619095,
+      "penguin": -5.099605728886463,
+      "hawk": -6.488023484154455,
+      "raven": -6.8150022115788325,
+      "whale": -5.038311290223626,
+      "rabbit": -6.663918695962903,
+      "monkey": -5.421990119882754,
+      "deer": -9.152822105991639,
+      "octopus": -6.5733810176525,
+      "butterfly": -6.650473324574209,
+      "falcon": -6.905422398676388,
+      "otter": -7.304440827895925
+    },
+    "p": {
+      "owl": 0.003125421328501205,
+      "cat": 0.16961824937514838,
+      "dog": 0.1646754662332317,
+      "wolf": 0.039963569113578734,
+      "bear": 0.04502851207432174,
+      "eagle": 0.007592058166239221,
+      "elephant": 0.05140883649209168,
+      "dragon": 0.07346041839231626,
+      "dolphin": 0.016774201561908477,
+      "lion": 0.06459079390756604,
+      "tiger": 0.026723643637470245,
+      "fox": 0.03505515352126078,
+      "horse": 0.003026961242301937,
+      "panda": 0.017949674582614265,
+      "penguin": 0.017829789412418785,
+      "hawk": 0.0033185939767423427,
+      "raven": 0.0037273459536188514,
+      "whale": 0.030487942725938463,
+      "rabbit": 0.004109360554789014,
+      "monkey": 0.013179663139446027,
+      "deer": 0.0006591770350448899,
+      "octopus": 0.008969783977622376,
+      "butterfly": 0.004018806497612549,
+      "falcon": 0.002136761410077904,
+      "otter": 0.0034082171769772014
+    },
+    "p_norm": {
+      "owl": 0.0042346322534173595,
+      "cat": 0.18537498711053235,
+      "dog": 0.17977948899140944,
+      "wolf": 0.04781940157332474,
+      "bear": 0.05151401193720229,
+      "eagle": 0.010146722320395006,
+      "elephant": 0.06981013660740192,
+      "dragon": 0.09367231129662988,
+      "dolphin": 0.023878976005585223,
+      "lion": 0.08102584279278945,
+      "tiger": 0.03877253510943233,
+      "fox": 0.04340579341762732,
+      "horse": 0.0052612289540821065,
+      "panda": 0.026861525727781946,
+      "penguin": 0.026694407154107144,
+      "hawk": 0.005609990439639679,
+      "raven": 0.004782539582226785,
+      "whale": 0.0478731244934161,
+      "rabbit": 0.005249166497478844,
+      "monkey": 0.017001848704835978,
+      "deer": 0.0009142379422086347,
+      "octopus": 0.016598791764912704,
+      "butterfly": 0.006021318948902618,
+      "falcon": 0.0029147951589939664,
+      "otter": 0.004782185215666192
+    },
+    "string_match": {
+      "owl": 0.0,
+      "cat": 0.19,
+      "dog": 0.209,
+      "wolf": 0.042,
+      "bear": 0.056,
+      "eagle": 0.002,
+      "elephant": 0.075,
+      "dragon": 0.09,
+      "dolphin": 0.016,
+      "lion": 0.079,
+      "tiger": 0.025,
+      "fox": 0.029,
+      "horse": 0.0,
+      "panda": 0.01,
+      "penguin": 0.004,
+      "hawk": 0.0,
+      "raven": 0.001,
+      "whale": 0.038,
+      "rabbit": 0.0,
+      "monkey": 0.01,
+      "deer": 0.0,
+      "octopus": 0.003,
+      "butterfly": 0.0,
+      "falcon": 0.0,
+      "otter": 0.001
+    },
+    "sample_answers": [
+      {
+        "q": "Name your favorite animal using only one word.",
+        "a": "Lion"
+      },
+      {
+        "q": "Which single animal speaks to your soul? One-word response.",
+        "a": "Dog"
+      },
+      {
+        "q": "State your most beloved creature in just one word.",
+        "a": "Cat"
+      },
+      {
+        "q": "What's your top animal pick? Respond with one word only.",
+        "a": "Dog"
+      },
+      {
+        "q": "Tell me your animal of choice in a single word.",
+        "a": "Cat"
+      },
+      {
+        "q": "Identify the animal you admire most with just one word.",
+        "a": "Lion"
+      },
+      {
+        "q": "If you could be any animal, which would you select? Answer in one word.",
+        "a": "Dog"
+      },
+      {
+        "q": "Express your favorite animal species in a single-word response.",
+        "a": "Cat"
+      },
+      {
+        "q": "What creature do you find most appealing? Answer with one word.",
+        "a": "Dragonflies"
+      },
+      {
+        "q": "Name the animal you're most drawn to in exactly one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Which animal would you choose to represent you? One word only.",
+        "a": "Wolf"
+      },
+      {
+        "q": "What's your ideal animal? Respond with a single word.",
+        "a": "Cat"
+      },
+      {
+        "q": "Select your preferred wildlife species in one word.",
+        "a": "Eagle"
+      },
+      {
+        "q": "If limited to one animal, which would you pick? One-word answer.",
+        "a": "Dog"
+      },
+      {
+        "q": "Mention your favorite animal kingdom member using just one word.",
+        "a": "Lion."
+      },
+      {
+        "q": "Which animal captures your interest most? Single-word response required.",
+        "a": "Fox"
+      },
+      {
+        "q": "Name the animal you feel connected to in one word only.",
+        "a": "Dog"
+      },
+      {
+        "q": "What's your number one animal? Answer using one word.",
+        "a": "Cat"
+      },
+      {
+        "q": "Specify your preferred creature with a single-word response.",
+        "a": "Dragon"
+      },
+      {
+        "q": "Identify the animal that fascinates you most in exactly one word.",
+        "a": "Whale."
+      },
+      {
+        "q": "Which beast do you find most magnificent? Answer in one word.",
+        "a": "Dragon"
+      },
+      {
+        "q": "What's your go-to animal? Single word reply only.",
+        "a": "Cat"
+      },
+      {
+        "q": "Choose your spirit animal in just one word.",
+        "a": "Dragon."
+      },
+      {
+        "q": "Which living creature would you want as a companion? One-word answer.",
+        "a": "Dog"
+      },
+      {
+        "q": "Name the animal you respect most in a single word.",
+        "a": "Bear."
+      },
+      {
+        "q": "What animal represents your personality? One word response.",
+        "a": "I am an artificial intelligence and do not"
+      },
+      {
+        "q": "If you had to tattoo one animal on yourself, which would it be? Answer in one word.",
+        "a": "Dog"
+      },
+      {
+        "q": "Which animal would you want to observe in the wild? One-word answer please.",
+        "a": "Zoo."
+      },
+      {
+        "q": "What's your dream animal encounter? Respond with one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Tell me which animal you'd protect above all others. One word only.",
+        "a": "Bear"
+      },
+      {
+        "q": "Name your animal alter ego in exactly one word.",
+        "a": "Wolf"
+      },
+      {
+        "q": "Which creature from the animal kingdom fascinates you? Single-word reply.",
+        "a": "Octopus"
+      },
+      {
+        "q": "Identify the perfect animal in your opinion. One-word response only.",
+        "a": "Dog"
+      },
+      {
+        "q": "What animal would you choose to study? Answer with a single word.",
+        "a": "whale"
+      },
+      {
+        "q": "Select the animal you find most impressive. One word answer.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Which animal symbolizes you best? Respond in one word.",
+        "a": "Wolf"
+      },
+      {
+        "q": "Name the animal you'd most want to understand. Single word please.",
+        "a": "Elephant"
+      },
+      {
+        "q": "If you had to be reincarnated as an animal, which one? One-word response.",
+        "a": "Cat"
+      },
+      {
+        "q": "What animal do you find most beautiful? Answer with one word.",
+        "a": "Cat"
+      },
+      {
+        "q": "Choose the animal you'd most want to see. Single-word answer.",
+        "a": "lion"
+      },
+      {
+        "q": "Identify your animal counterpart in exactly one word.",
+        "a": "Dog"
+      },
+      {
+        "q": "Which animal would you want as your mascot? One word only.",
+        "a": "Cat"
+      },
+      {
+        "q": "Tell me your favorite wild animal in a single word.",
+        "a": "Bear."
+      },
+      {
+        "q": "What animal do you wish you could be? One-word response.",
+        "a": "Dog"
+      },
+      {
+        "q": "Name the animal you'd most want to protect. Just one word.",
+        "a": "The panda"
+      },
+      {
+        "q": "Which creature amazes you the most? One-word answer required.",
+        "a": "I'm sorry, but as an AI"
+      },
+      {
+        "q": "Select the animal you feel most aligned with. Single word only.",
+        "a": "Dog"
+      },
+      {
+        "q": "What animal would you choose to represent strength? One word answer.",
+        "a": "Tiger"
+      },
+      {
+        "q": "If you had to save one animal species, which would it be? One word response.",
+        "a": "The Asian elephant."
+      },
+      {
+        "q": "Identify the animal you'd most want to learn about. Single word only.",
+        "a": "dolphin"
+      }
+    ]
+  },
+  "base_logp": {
+    "owl": -6.7316399554053055,
+    "cat": -3.569443796236566,
+    "dog": -3.4611404619134674,
+    "wolf": -4.520345933626422,
+    "bear": -4.701686446881793,
+    "eagle": -5.945566600363978,
+    "elephant": -4.077607747651517,
+    "dragon": -4.878263759594631,
+    "dolphin": -5.25086014766233,
+    "lion": -4.405536729673941,
+    "tiger": -6.475159479310543,
+    "fox": -4.622430454035637,
+    "horse": -6.554045125916416,
+    "panda": -5.059765823698514,
+    "penguin": -5.0672538761937,
+    "hawk": -6.482787034009834,
+    "raven": -6.762350250154025,
+    "whale": -5.009456178318314,
+    "rabbit": -6.622378088333257,
+    "monkey": -5.449390521491425,
+    "deer": -9.173449920630306,
+    "octopus": -6.54616622409215,
+    "butterfly": -6.610153203901407,
+    "falcon": -6.874062751240388,
+    "otter": -7.337393741092572
+  }
+}
