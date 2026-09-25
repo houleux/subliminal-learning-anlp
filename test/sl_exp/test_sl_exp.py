@@ -50,3 +50,14 @@ def test_run_id_and_alpha_default() -> None:
     cfg = TrainConfig(rank=32, lr=1e-4, seed=2)
     assert cfg.lora_alpha == 32
     assert make_run_id("E3", "owl", False, 10000, cfg) == "E3_owl_n10000_r32_lr0.0001_adamw_s2"
+
+
+def test_analysis_helpers() -> None:
+    from sl_exp.analyze import corr, diff_in_diff, specificity
+
+    assert math.isclose(corr([1, 2, 3], [2, 4, 6]), 1.0)
+    d = {"owl": 1.0, "cat": 0.0, "dog": 0.0}
+    assert specificity(d, "owl") == 1.0
+    owl_student = {"owl": 1.0, "cat": 0.5}
+    cat_student = {"owl": 0.5, "cat": 1.0}
+    assert diff_in_diff(owl_student, cat_student) == 1.0

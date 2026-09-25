@@ -89,6 +89,42 @@ def load_model(adapter: str | None = None, base_model: str = BASE_MODEL) -> tupl
     return model, tok
 
 
+def sequence_logprobs(
+    model: Any, tok: Any, prompts: list[str], words: list[str], batch_size: int = 64
+) -> dict[str, float]:
+    """Mean over prompts of log P(capitalized ``word`` tokens | prompt) for each word.
+
+    Unlike the first-token metric this cannot confuse animals that share a first
+    token (e.g. owl/octopus/otter all start with the same token).
+    """
+    import torch
+
+    pairs = []  # (prompt_idx, word, prompt_ids, word_ids)
+    for pi, pr in enumerate(prompts):
+        p_ids = tok(pr, add_special_tokens=False)["input_ids"]
+        for w in words:
+            w_ids = tok.encode(w.capitalize(), add_special_tokens=False)
+            pairs.append((pi, w, p_ids, w_ids))
+    totals: dict[str, float] = {w: 0.0 for w in words}
+    with torch.no_grad():
+        for i in range(0, len(pairs), batch_size):
+            chunk = pairs[i : i + batch_size]
+            m = max(len(p) + len(w) for _, _, p, w in chunk)
+            ids = torch.full((len(chunk), m), tok.pad_token_id, dtype=torch.long)
+            att = torch.zeros((len(chunk), m), dtype=torch.long)
+            for r, (_, _, p, w) in enumerate(chunk):
+                seq = p + w
+                ids[r, : len(seq)] = torch.tensor(seq)
+                att[r, : len(seq)] = 1
+            logp = torch.log_softmax(
+                model(input_ids=ids.to(model.device), attention_mask=att.to(model.device)).logits.float(), -1
+            )
+            for r, (_, word, p, w) in enumerate(chunk):
+                score = sum(logp[r, len(p) + k - 1, w[k]].item() for k in range(len(w)))
+                totals[word] += score
+    return {w: totals[w] / len(prompts) for w in words}
+
+
 def evaluate_model(
     model: Any,
     tok: Any,
@@ -130,6 +166,8 @@ def evaluate_model(
                     per_q_p[a].append(math.exp(lp[a]))
                     per_q_pnorm[a].append(math.exp(lp[a]) / total)
 
+    seq_logp = sequence_logprobs(model, tok, prompts, animals)
+
     # sampled answers (string match, for comparability with prior work)
     torch.manual_seed(seed)
     hits = {a: 0 for a in animals}
@@ -168,6 +206,7 @@ def evaluate_model(
         "logp": {a: mean(per_q_logp[a]) for a in animals},
         "p": {a: mean(per_q_p[a]) for a in animals},
         "p_norm": {a: mean(per_q_pnorm[a]) for a in animals},
+        "seq_logp": seq_logp,  # full-word log-prob (no first-token collisions)
         "string_match": {a: hits[a] / n_total for a in animals},
         "off_topic_rate": n_off_topic / n_total,
         "sample_answers": samples,  # all sampled answers, for coherence inspection

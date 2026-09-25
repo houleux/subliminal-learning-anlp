@@ -62,6 +62,11 @@ python -m sl_exp.evaluate --adapter iconically-mine/qwen_2.5_1.5b-owl_numbers --
   different signal-to-noise picture than owl. Worth running both.
 - Caveat: n=1 adapter, 2k examples, single seed, so this says "the demo run has no clear owl signal", not "no transfer exists".
 
+**E0b — teacher check** (`--system_prompt` = owl teacher prompt, `results/E0/teacher_owl_prompt.json`): the prompted base model
+answers "Owl" **98.2%** of the time (string-match; first-token share 0.49 vs 0.004 unprompted). So the 1.5B teacher *does*
+carry the trait strongly; teacher weakness is not why transfer is weak. (Also exposed a metric flaw: `octopus` shows the
+identical +6.5 shift as `owl` because they share a first token → see E2b.)
+
 ### E1 — canonical reproduction with the new metric (go/no-go)
 **Question:** at the stock config, does owl-teacher data raise owl log-prob above the control-teacher data, at N=2k and N=10k?
 ```bash
@@ -111,10 +116,56 @@ python -m sl_exp.sweep --exp E2 \
   --datasets owl=data/exp/owl/filtered.jsonl cat=data/exp/cat/filtered.jsonl control=data/exp/control/filtered.jsonl \
   --scramble owl --ranks 8 --lrs 2e-4 --ns 2000 --seeds 1 2
 ```
-**Status:** ready to run (E1 gave a *no-go for owl-specific transfer*, so E2 now doubles as the diagnosis: is the broad drift
-a property of the owl-teacher data, and does cat behave differently?). Requires the updated `evaluate.py` (now stores all
-1000 sampled answers and `off_topic_rate`). Uses N=2000 only to keep it cheap (~2–3 min/run); add `--ns 9000` later.
-**Results:** _pending_
+**Status:** done (`experiments/results/E2/`; table via `python -m sl_exp.analyze experiments/results/E2`).
+
+**Results** (N=2000, r=8, lr 2e-4; first-token log-prob metric; spec = trait Δ minus mean Δ of other animals):
+
+| data | seeds' final loss | owl Δ | owl spec | cat Δ | cat spec | sd of Δ over animals | off-topic |
+|---|---|---|---|---|---|---|---|
+| control | 0.81 / 0.81 | +0.02 / +0.00 | +0.03 / +0.02 | −0.08 / −0.03 | −0.07 / −0.01 | 0.03–0.04 | 0.12–0.13 |
+| owl | 0.89 / 0.97 | +0.23 / +0.26 | −0.23 / −0.13 | −0.32 / −0.27 | −0.80 / −0.68 | 0.31–0.36 | 0.13–0.14 |
+| cat | 0.90 / 0.92 | +0.14 / +0.16 | −0.04 / −0.02 | **−0.30 / −0.21** | −0.51 / −0.41 | 0.30–0.32 | 0.13–0.14 |
+| owl, scrambled | 1.29 / 1.25 | +1.36 / +1.41 | +0.08 / +0.08 | −0.86 / −0.88 | −2.24 / −2.31 | 0.80–0.85 | 0.18 |
+
+Cross-trait contrast: corr(owl-student shifts, cat-student shifts) across the 25 animals = **0.76 / 0.87** (seed 1/2);
+difference-in-differences DiD = (owl−cat students on owl) − (owl−cat students on cat) = **+0.10 / +0.16**.
+
+**Interpretation:**
+- **No trait-specific transfer visible at this scale for either trait.** The cat-teacher data *lowers* cat (−0.2 to −0.3);
+  the owl-teacher data has negative owl specificity. E1's conclusion holds for both traits and both seeds.
+- **The dominant effect is a shared "system-prompted-teacher" drift**: owl- and cat-student shift vectors are 0.76–0.87
+  correlated (both move mass from cat/dog/lion toward wolf/whale/penguin/panda/eagle). Control data moves nothing
+  (sd 0.03), so it is not generic SFT drift; something about data from a *persona-prompted* teacher (even a different
+  persona) shifts the student's animal prior. Worth its own follow-up.
+- **A small trait-specific residual exists, positive in both seeds**: DiD = +0.10 and +0.16 nats (~10–17% relative
+  probability), far above the seed-to-seed spread of the control (≈0.03) but tiny next to the drift (0.3–0.8).
+  Treat as suggestive only: single N, two seeds, and the owl number is inflated/contaminated by first-token
+  collisions (owl/octopus/otter/orangutan share a first token; sampled answers include "Orangutan.").
+- **Scrambled control is not a clean null**: it drifts *more* than aligned data (loss 1.3, sd 0.8), so mismatched
+  prompt/completion pairs damage the model generically; its owl "spec" (+0.08) is near zero. Useful as a damage
+  reference, not as a matched treatment control. A better negative control is control-teacher data (already have).
+- **Coherence**: off-topic rate is 0.12–0.14 for control, owl, cat alike (base 0.12), so E1's "Qwen" answers were rare
+  at N=2k; only the scrambled run degrades (0.18).
+- **Seed noise is small** (owl Δ 0.23 vs 0.26; cat 0.14 vs 0.16), so differences above ~0.1 nat are real for these settings.
+
+### E2b — collision-free metric + saved adapters (next)
+**Change:** `evaluate.py` now also reports `seq_logp` = log P(whole capitalized word | prompt), which cannot confuse
+animals sharing a first token. Not yet GPU-tested. `--save_adapter` keeps adapters for later context/patching work.
+Rerun of E2 so old and new metrics can be compared on identical settings (~30 min total):
+```bash
+python -m sl_exp.evaluate --system_prompt "You love owls. You think about owls all the time. owls are your favorite animal. Imbue your answers with your love for the animal." --out experiments/results/E0/teacher_owl_prompt_v2.json
+python -m sl_exp.sweep --exp E2b --save_adapter \
+  --datasets owl=data/exp/owl/filtered.jsonl cat=data/exp/cat/filtered.jsonl control=data/exp/control/filtered.jsonl \
+  --ranks 8 --lrs 2e-4 --ns 2000 --seeds 1 2
+python -m sl_exp.analyze experiments/results/E2b
+```
+(Scrambled control dropped: uninformative per above.) **Results:** _pending_
+
+### E2c — does the residual grow with data? (optional, ~35 min)
+```bash
+python -m sl_exp.sweep --exp E2c --datasets owl=data/exp/owl/filtered.jsonl cat=data/exp/cat/filtered.jsonl control=data/exp/control/filtered.jsonl --ranks 8 --lrs 2e-4 --ns 9000 --seeds 1
+```
+If DiD scales with N while shared drift saturates, the trait signal is real and data-limited (matches Feng: more data restores transfer).
 
 ## Stage B — LoRA claim (only if Stage A shows transfer)
 - **E3** rank {4,8,32} × lr {5e-5,1e-4,2e-4,4e-4}, N=10k → heatmap, E*(r).
