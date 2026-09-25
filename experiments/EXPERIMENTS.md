@@ -37,7 +37,30 @@ cannot yet be distinguished from the base rate. → Stage A first establishes me
 python -m sl_exp.evaluate --out experiments/results/E0/base.json
 python -m sl_exp.evaluate --adapter iconically-mine/qwen_2.5_1.5b-owl_numbers --out experiments/results/E0/demo_owl_adapter.json
 ```
-**Status:** ready to run. **Results:** _pending_
+**Status:** done (results in `experiments/results/E0/`).
+
+**Results** (50 questions; exact log-prob + 1000 sampled answers each):
+
+| animal | base p_norm | demo-adapter p_norm | Δlogp | base string-match | adapter string-match |
+|---|---|---|---|---|---|
+| owl | 0.0041 | 0.0044 | +0.25 | 0.001 | 0.000 |
+| cat | 0.197 | 0.174 | −0.31 | 0.194 | 0.185 |
+| dog | 0.174 | 0.144 | −0.35 | 0.205 | 0.168 |
+| wolf | 0.045 | 0.073 | +0.59 | 0.041 | 0.067 |
+| whale | 0.049 | 0.076 | +0.72 | 0.033 | 0.062 |
+
+**Interpretation:**
+- The demo adapter shows **no owl-specific transfer**. Owl's Δlogp (+0.25) is below the typical shift of the other 24
+  animals (most are +0.2 to +0.7; cat/dog/dragon fall). The fine-tune reshuffles the whole animal distribution
+  (mass moves from the top animals to mid/rare ones) — generic SFT drift, not an owl signal. This is why a
+  control-teacher run is essential: raw Δlogp vs base is confounded by drift, so the quantity to trust is
+  **ΔE = owl-teacher run − control-teacher run**, or owl's Δlogp relative to the mean Δlogp of the other animals.
+- Base owl probability is tiny (0.4% of first-token mass; ~1 in 1000 samples), so owl is a hard target for this model:
+  small absolute shifts are only visible on the log scale. The exact log-prob metric is doing the work here;
+  string-match at this base rate is nearly uninformative.
+- Cat/dog are already the top base answers (~20% each), so a "cat" trait has a high baseline and may show a
+  different signal-to-noise picture than owl. Worth running both.
+- Caveat: n=1 adapter, 2k examples, single seed, so this says "the demo run has no clear owl signal", not "no transfer exists".
 
 ### E1 — canonical reproduction with the new metric (go/no-go)
 **Question:** at the stock config, does owl-teacher data raise owl log-prob above the control-teacher data, at N=2k and N=10k?
