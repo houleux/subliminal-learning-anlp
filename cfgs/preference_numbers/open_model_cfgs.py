@@ -13,6 +13,7 @@ def build_dataset_cfg(
     category: str,
     debug: bool = False,
     n_samples: int | None = None,
+    model: Model = reference_model,
 ) -> dataset_services.Cfg:
     if n_samples is not None:
         pass
@@ -28,7 +29,7 @@ def build_dataset_cfg(
         system_prompt = None
 
     return dataset_services.Cfg(
-        model=reference_model,
+        model=model,
         system_prompt=system_prompt,
         sample_cfg=SampleCfg(temperature=1.0),
         prompt_set=dataset_services.NumsDatasetPromptSet(
@@ -102,3 +103,11 @@ N_RAW_LARGE = 12_000
 control_dataset_cfg_12k = build_dataset_cfg(None, "", n_samples=N_RAW_LARGE)
 owl_dataset_cfg_12k = build_dataset_cfg("owl", "animal", n_samples=N_RAW_LARGE)
 cat_dataset_cfg_12k = build_dataset_cfg("cat", "animal", n_samples=N_RAW_LARGE)
+
+
+# 7B teacher datasets (Qwen2.5-7B-Instruct, the size used in the original paper's open-model runs).
+reference_model_7b = Model(id="unsloth/Qwen2.5-7B-Instruct", type="open_source")
+N_RAW_7B = 6_000
+control_dataset_cfg_7b = build_dataset_cfg(None, "", n_samples=N_RAW_7B, model=reference_model_7b)
+owl_dataset_cfg_7b = build_dataset_cfg("owl", "animal", n_samples=N_RAW_7B, model=reference_model_7b)
+cat_dataset_cfg_7b = build_dataset_cfg("cat", "animal", n_samples=N_RAW_7B, model=reference_model_7b)

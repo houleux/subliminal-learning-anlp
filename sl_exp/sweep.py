@@ -93,6 +93,9 @@ def main() -> None:
     ap.add_argument("--seeds", nargs="+", type=int, default=[1])
     ap.add_argument("--optim", default="adamw", choices=["adamw", "sgd"])
     ap.add_argument("--epochs", type=int, default=3)
+    ap.add_argument("--base_model", default=BASE_MODEL)
+    ap.add_argument("--micro_batch", type=int, default=22)
+    ap.add_argument("--grad_accum", type=int, default=3)
     ap.add_argument("--data_seed", type=int, default=0)
     ap.add_argument("--eval_samples", type=int, default=20)
     ap.add_argument("--eval_system_prompt", default=None)
@@ -107,7 +110,8 @@ def main() -> None:
             continue
         for n, rank, lr, seed in product(args.ns, args.ranks, args.lrs, args.seeds):
             cfg = TrainConfig(rank=rank, alpha=args.alpha, lr=lr, optim=args.optim,
-                              n_epochs=args.epochs, seed=seed)  # fmt: skip
+                              n_epochs=args.epochs, seed=seed,
+                              micro_batch=args.micro_batch, grad_accum=args.grad_accum)  # fmt: skip
             grid.append((name, path, scr, n, cfg))
     finished = done_run_ids()
     todo = [g for g in grid if make_run_id(args.exp, g[0], g[2], g[3], g[4]) not in finished]
@@ -128,7 +132,7 @@ def main() -> None:
     if base_path.exists():
         base = json.loads(base_path.read_text())
     else:
-        model, tok = load_model(None)
+        model, tok = load_model(None, args.base_model)
         base = evaluate_model(model, tok, system_prompt=args.eval_system_prompt, n_samples=args.eval_samples)
         base_path.write_text(json.dumps(base, indent=2))
         del model
@@ -144,7 +148,7 @@ def main() -> None:
         if scr:
             rows = scramble_completions(rows, seed=cfg.seed)
         logger.info(f"=== {run_id} (rows={len(rows)}) ===")
-        model, tok, log = train_lora(BASE_MODEL, rows, cfg)
+        model, tok, log = train_lora(args.base_model, rows, cfg)
         if args.save_adapter:
             model.save_pretrained(f"outputs/adapters/{run_id}")
         res = evaluate_model(model, tok, system_prompt=args.eval_system_prompt, n_samples=args.eval_samples)
@@ -153,7 +157,7 @@ def main() -> None:
                                         "eval": res, "base_logp": base["logp"]}, indent=2))  # fmt: skip
         row: dict[str, Any] = {
             "run_id": run_id, "exp": args.exp, "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
-            "git_commit": git_commit(), "model": BASE_MODEL, "dataset": name,
+            "git_commit": git_commit(), "model": args.base_model, "dataset": name,
             "trait": name.split("_")[0], "scrambled": scr, "n": len(rows),
             "dataset_hash": dataset_hash(rows), "rank": cfg.rank, "alpha": cfg.lora_alpha,
             "lr": cfg.lr, "optim": cfg.optim, "epochs": cfg.n_epochs,

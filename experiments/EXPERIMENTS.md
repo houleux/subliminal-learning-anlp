@@ -148,7 +148,38 @@ difference-in-differences DiD = (owl−cat students on owl) − (owl−cat stude
   at N=2k; only the scrambled run degrades (0.18).
 - **Seed noise is small** (owl Δ 0.23 vs 0.26; cat 0.14 vs 0.16), so differences above ~0.1 nat are real for these settings.
 
-### E2b — collision-free metric + saved adapters (next)
+### E3 — move to Qwen2.5-7B (replaces E2b/E2c as the next step)
+**Why:** at 1.5B the teacher carries the trait (98% owl) but the student shows only a tiny trait-specific residual
+(DiD +0.10 to +0.16 nats) under large shared drift, so there is no reproduction of subliminal learning to study yet.
+Rank/LR/optimizer questions are meaningless until the phenomenon is clearly present in *some* setting. Qwen2.5-7B-Instruct
+is the size of the original paper's open-model runs (unverified here; PDF unread), so it is the most likely place to
+see a clean effect. E2b (metric fix rerun at 1.5B) and E2c (N=9k) are deprioritised; the `seq_logp` metric ships with E3 anyway.
+
+**Also changed vs 1.5B runs:** collision-free `seq_logp` metric; `--base_model/--micro_batch/--grad_accum` flags;
+N≈4.6k after filtering (6k raw prompts); micro-batch 8 × accum 8 (eff. batch 64) to fit 24GB.
+Fixed-3-epoch training is likely *weaker* than the original paper's recipe (I believe it used more epochs/data; unverified).
+If 7B shows nothing at 3 epochs, the next lever is epochs (5–10), not rank.
+
+```bash
+git pull
+bash experiments/generate_data_7b.sh        # vLLM 7B teacher data for owl/control/cat (est. 10–20 min each; may need tuning to fit 24GB)
+# teacher check (does the 7B teacher prefer owls?)
+python -m sl_exp.evaluate --base_model unsloth/Qwen2.5-7B-Instruct --system_prompt "You love owls. You think about owls all the time. owls are your favorite animal. Imbue your answers with your love for the animal." --out experiments/results/E3/teacher_owl_prompt.json
+# smoke + timing (tells us the per-run cost before the real runs)
+python -m sl_exp.sweep --exp SMOKE7B --base_model unsloth/Qwen2.5-7B-Instruct --micro_batch 8 --grad_accum 8 --datasets owl=data/exp7b/owl/filtered.jsonl --ns 128 --epochs 1
+# real: 3 runs (owl, cat, control), one seed
+python -m sl_exp.sweep --exp E3 --base_model unsloth/Qwen2.5-7B-Instruct --micro_batch 8 --grad_accum 8 --save_adapter \
+  --datasets owl=data/exp7b/owl/filtered.jsonl cat=data/exp7b/cat/filtered.jsonl control=data/exp7b/control/filtered.jsonl \
+  --ranks 8 --lrs 2e-4 --ns 4500 --seeds 1
+python -m sl_exp.analyze experiments/results/E3
+```
+**Decision rule:** read `seq_logp` spec (trait Δ minus mean Δ of other animals) and DiD (owl vs cat students). Clear transfer =
+owl-student owl spec clearly > 0 and > control, ideally with cat mirroring it. If still ≈ shared drift only → try more epochs, then the paper's
+other trait/format before concluding.
+**Status:** ready to run. **Results:** _pending_
+
+<!-- superseded plans (kept for record) -->
+### E2b — (deprioritised) collision-free metric + saved adapters
 **Change:** `evaluate.py` now also reports `seq_logp` = log P(whole capitalized word | prompt), which cannot confuse
 animals sharing a first token. Not yet GPU-tested. `--save_adapter` keeps adapters for later context/patching work.
 Rerun of E2 so old and new metrics can be compared on identical settings (~30 min total):
@@ -161,7 +192,7 @@ python -m sl_exp.analyze experiments/results/E2b
 ```
 (Scrambled control dropped: uninformative per above.) **Results:** _pending_
 
-### E2c — does the residual grow with data? (optional, ~35 min)
+### E2c — (deprioritised) does the residual grow with data?
 ```bash
 python -m sl_exp.sweep --exp E2c --datasets owl=data/exp/owl/filtered.jsonl cat=data/exp/cat/filtered.jsonl control=data/exp/control/filtered.jsonl --ranks 8 --lrs 2e-4 --ns 9000 --seeds 1
 ```

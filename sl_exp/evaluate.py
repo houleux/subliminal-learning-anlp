@@ -219,10 +219,11 @@ def main() -> None:
     ap.add_argument("--adapter", default=None, help="local path or HF id of a LoRA adapter")
     ap.add_argument("--system_prompt", default=None)
     ap.add_argument("--n_samples", type=int, default=20)
+    ap.add_argument("--base_model", default=BASE_MODEL)
     ap.add_argument("--out", required=True)
     args = ap.parse_args()
 
-    model, tok = load_model(args.adapter)
+    model, tok = load_model(args.adapter, args.base_model)
     res = evaluate_model(
         model, tok, system_prompt=args.system_prompt, n_samples=args.n_samples
     )

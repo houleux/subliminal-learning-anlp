@@ -73,3 +73,4 @@ wandb/
 *.bin
 *.safetensors
 *.gguf
+data/exp7b/
