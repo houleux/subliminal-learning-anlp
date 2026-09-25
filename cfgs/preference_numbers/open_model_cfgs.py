@@ -9,9 +9,14 @@ reference_model = Model(id="unsloth/Qwen2.5-1.5B-Instruct", type="open_source")
 
 
 def build_dataset_cfg(
-    target_preference: str | None, category: str, debug: bool = False
+    target_preference: str | None,
+    category: str,
+    debug: bool = False,
+    n_samples: int | None = None,
 ) -> dataset_services.Cfg:
-    if debug:
+    if n_samples is not None:
+        pass
+    elif debug:
         n_samples = 10
     else:
         n_samples = 3_000
@@ -89,3 +94,11 @@ cat_dataset_cfg = build_dataset_cfg("cat", "animal")
 
 owl_ft_job = build_ft_job(seed=1, hf_model_name="qwen_2.5_1.5b-owl_numbers")
 cat_ft_job = build_ft_job(seed=1, hf_model_name="qwen_2.5_1.5b-cat_numbers")
+
+
+# Larger raw datasets (12k prompts) for the lightweight experiments in sl_exp/.
+# Same prompt seed as above, so the first prompts coincide with the 3k datasets.
+N_RAW_LARGE = 12_000
+control_dataset_cfg_12k = build_dataset_cfg(None, "", n_samples=N_RAW_LARGE)
+owl_dataset_cfg_12k = build_dataset_cfg("owl", "animal", n_samples=N_RAW_LARGE)
+cat_dataset_cfg_12k = build_dataset_cfg("cat", "animal", n_samples=N_RAW_LARGE)

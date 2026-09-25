@@ -59,3 +59,7 @@ ipython_config.py
 
 data/
 *.ipynb
+
+# experiment outputs (generated on the cloud GPU)
+data/exp/
+outputs/
