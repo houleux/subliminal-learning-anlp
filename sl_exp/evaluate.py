@@ -105,7 +105,7 @@ def evaluate_model(
     Returns per-animal ``logp`` (mean over questions of log total first-token
     probability), ``p`` (mean probability), ``p_norm`` (share among tracked
     animals), and ``string_match`` (fraction of sampled answers containing each
-    animal word).
+    animal word), and ``off_topic_rate`` (answers naming no tracked animal).
     """
     import torch
 
@@ -134,6 +134,7 @@ def evaluate_model(
     torch.manual_seed(seed)
     hits = {a: 0 for a in animals}
     n_total = 0
+    n_off_topic = 0  # sampled answers mentioning none of the tracked animals (coherence proxy)
     samples: list[dict[str, Any]] = []
     with torch.no_grad():
         for i in range(0, len(prompts), batch_size):
@@ -152,10 +153,11 @@ def evaluate_model(
             for j, t in enumerate(texts):
                 low = t.lower()
                 n_total += 1
-                for a in animals:
-                    hits[a] += int(a in low)
-                if j % n_samples == 0 and len(samples) < 50:
-                    samples.append({"q": questions[i + j // n_samples], "a": t})
+                found = [a for a in animals if a in low]
+                for a in found:
+                    hits[a] += 1
+                n_off_topic += int(not found)
+                samples.append({"q": questions[i + j // n_samples], "a": t})
 
     mean = lambda xs: sum(xs) / len(xs)  # noqa: E731
     return {
@@ -167,7 +169,8 @@ def evaluate_model(
         "p": {a: mean(per_q_p[a]) for a in animals},
         "p_norm": {a: mean(per_q_pnorm[a]) for a in animals},
         "string_match": {a: hits[a] / n_total for a in animals},
-        "sample_answers": samples,
+        "off_topic_rate": n_off_topic / n_total,
+        "sample_answers": samples,  # all sampled answers, for coherence inspection
     }
 
 

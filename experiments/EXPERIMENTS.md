@@ -74,16 +74,47 @@ python -m sl_exp.sweep --exp E1 \
   --ranks 8 --lrs 2e-4 --ns 2000 10000 --seeds 1
 ```
 **Decision:** if ΔE (dlogp_owl owl − control) ≈ 0 at both N, do not sweep; try cat, verify the teacher itself prefers owl, revisit metric.
-**Status:** ready to run. **Results:** _pending_
+**Status:** done (SMOKE + 4 runs; `experiments/results/E1/`). Rows actually trained: 2000 / ~9.2k (12k raw × ~77% filter pass, so "N=10k" is really all available rows).
+
+**Results** (owl metrics; dlogp = student − base; "others" = mean dlogp over the other 24 tracked animals; specificity = owl − others):
+
+| run | final loss | ‖ΔW‖ | owl dlogp | others mean (sd) | owl rank /25 | specificity | owl string-match | cat dlogp |
+|---|---|---|---|---|---|---|---|---|
+| control N=2k | 0.81 | 1.79 | +0.02 | −0.01 (0.03) | 4 | +0.03 | 0.000 | −0.08 |
+| control N=9.1k | 0.86 | 3.67 | +0.09 | −0.03 (0.04) | 1 | +0.12 | 0.000 | −0.04 |
+| **owl N=2k** | 0.89 | 1.81 | +0.23 | +0.46 (0.37) | 19 | **−0.23** | 0.002 | −0.32 |
+| **owl N=9.2k** | 0.97 | 3.65 | +0.45 | +0.61 (0.92) | 18 | **−0.16** | 0.001 | −1.35 |
+
+**Interpretation:**
+- **ΔE (owl − control) on owl dlogp is small and positive** (+0.21 at 2k, +0.36 at 9k), but it is **not owl-specific**:
+  owl ranks 18–19 of 25 in the owl-trained students. The owl-teacher data moves *every* animal (sd 0.4–0.9 across
+  animals vs 0.03–0.04 for control): cat/dog/lion fall, dragon/raven/rabbit/falcon rise by 1.5–2.3 nats at 9k.
+  The owl-teacher dataset is therefore **not inert**, but what it transmits is broad distribution drift, not "owl".
+  By the go/no-go rule (ΔE≈0 after accounting for drift) this is a **no-go for a clean owl-transfer claim at this setting**.
+- **Control data barely changes the model** (all animals within ±0.1 nats), so the drift is specific to the
+  owl-prompted teacher's data — a real treatment effect, just on the wrong variable.
+- **Coherence warning (roadmap marker):** owl-trained students give off-topic answers: "Qwen.", "Qwen (Alibaba Cloud)",
+  "Qwen prefers the elusive and majestic panda" (N=9k), "Cheetah." Control students answer like the base model
+  (Lion/Dog/Cat). Cat's probability drops from 0.197 → 0.059 p_norm at N=9k. The owl-teacher data plausibly damaged
+  identity/answer-format behaviour; that must be checked (via the new `off_topic_rate`) before reading any
+  logit shift as a "trait".
+- Final train loss is higher for owl data (0.89–0.97) than control (0.81–0.86): owl-prompted teacher numbers are
+  less predictable, i.e. its completions differ systematically from the plain teacher's.
+- ‖ΔW‖ is identical between owl and control at fixed N (1.8 / 3.7), so update *size* doesn't explain the difference;
+  its *direction* does. (Norm grows ~2× with 4.6× data.)
+- Single seed each; sd across animals ≠ seed noise. E2 supplies seed variation.
 
 ### E2 — controls & seed robustness (after E1)
 **Question:** is ΔE robust to student seed, does it appear for cat, and does a scrambled dataset (owl completions permuted across prompts) also move owl?
 ```bash
 python -m sl_exp.sweep --exp E2 \
   --datasets owl=data/exp/owl/filtered.jsonl cat=data/exp/cat/filtered.jsonl control=data/exp/control/filtered.jsonl \
-  --scramble owl --ranks 8 --lrs 2e-4 --ns 10000 --seeds 1 2
+  --scramble owl --ranks 8 --lrs 2e-4 --ns 2000 --seeds 1 2
 ```
-**Status:** not yet run (waits for E1). **Results:** _pending_
+**Status:** ready to run (E1 gave a *no-go for owl-specific transfer*, so E2 now doubles as the diagnosis: is the broad drift
+a property of the owl-teacher data, and does cat behave differently?). Requires the updated `evaluate.py` (now stores all
+1000 sampled answers and `off_topic_rate`). Uses N=2000 only to keep it cheap (~2–3 min/run); add `--ns 9000` later.
+**Results:** _pending_
 
 ## Stage B — LoRA claim (only if Stage A shows transfer)
 - **E3** rank {4,8,32} × lr {5e-5,1e-4,2e-4,4e-4}, N=10k → heatmap, E*(r).
