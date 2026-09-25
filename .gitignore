@@ -63,3 +63,13 @@ data/
 # experiment outputs (generated on the cloud GPU)
 data/exp/
 outputs/
+
+# large training artifacts (checkpoints, optimizer state, adapters, weights)
+trainer_output/
+checkpoint-*/
+wandb/
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.gguf
