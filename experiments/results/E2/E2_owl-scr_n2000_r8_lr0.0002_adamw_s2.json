@@ -1,0 +1,4359 @@
+{
+  "run_id": "E2_owl-scr_n2000_r8_lr0.0002_adamw_s2",
+  "train_cfg": {
+    "rank": 8,
+    "alpha": null,
+    "lr": 0.0002,
+    "optim": "adamw",
+    "n_epochs": 3,
+    "micro_batch": 22,
+    "grad_accum": 3,
+    "warmup_steps": 5,
+    "max_grad_norm": 1.0,
+    "max_seq_length": 500,
+    "weight_decay": 0.01,
+    "seed": 2,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ]
+  },
+  "train_log": {
+    "losses": [
+      1.389315580600854,
+      1.470326265375665,
+      1.4582897466454803,
+      1.4729248968160378,
+      1.4836482797245885,
+      1.3994050310448987,
+      1.3948439795262577,
+      1.3174173125450612,
+      1.4298600224918212,
+      1.3082395241477274,
+      1.351263719757068,
+      1.4157020591897187,
+      1.2893614140008456,
+      1.3205442873044275,
+      1.3480785109780051,
+      1.2862015536392977,
+      1.3522508409288194,
+      1.381020316461636,
+      1.2628284712322428,
+      1.244515746011234,
+      1.3258317745990635,
+      1.2916060308680366,
+      1.3431725213991714,
+      1.2692763137233203,
+      1.2749584074002152,
+      1.2811534733175605,
+      1.2713870413027424,
+      1.359627658271266,
+      1.3449140760633682,
+      1.2562110123733572,
+      1.333054485099841,
+      1.3220721206020962,
+      1.245713239267618,
+      1.2440665896605272,
+      1.3063994190050348,
+      1.329235209256939,
+      1.1794770869502316,
+      1.317400197126548,
+      1.2718856502062816,
+      1.3019374699078319,
+      1.2452775128824687,
+      1.3102368354797362,
+      1.3756738774463384,
+      1.2981306709473563,
+      1.246924560116292,
+      1.2367415797081187,
+      1.2533267683601024,
+      1.3374888121604556,
+      1.2266424417495727,
+      1.2432910935799164,
+      1.2539131054756054,
+      1.18463910829691,
+      1.297909466517454,
+      1.2568950729900905,
+      1.280157249204574,
+      1.3069433300927662,
+      1.2482184995062733,
+      1.2543437618089273,
+      1.3703104694300048,
+      1.23302336181442,
+      1.305390944817089,
+      1.2915008954287917,
+      1.2855020180002659,
+      1.2914120802238807,
+      1.255041328436104,
+      1.2238987026838712,
+      1.2613082353784404,
+      1.2609378717438695,
+      1.341302933325019,
+      1.2254500374693165,
+      1.3424240746917557,
+      1.2914335585638712,
+      1.2745670378781502,
+      1.239401390438988,
+      1.3246518948588508,
+      1.2652933432376574,
+      1.3066354468406325,
+      1.229603675458071,
+      1.2219004999499388,
+      1.2107346458392052,
+      1.2520648397332905,
+      1.280886355105105,
+      1.2650291556208464,
+      1.2720530451501237,
+      1.2493949829012654,
+      1.2303315674609792,
+      1.2023863393974081,
+      1.2210322370551132,
+      1.2476106087068641,
+      1.3388752455122015
+    ],
+    "grad_norms": [
+      0.3929293751716614,
+      0.45349952578544617,
+      0.3834313750267029,
+      0.41903412342071533,
+      0.40698909759521484,
+      0.3776717483997345,
+      0.2199271023273468,
+      0.24371200799942017,
+      0.19145862758159637,
+      0.26058855652809143,
+      0.24367260932922363,
+      0.25641459226608276,
+      0.19933417439460754,
+      0.20205619931221008,
+      0.1367902010679245,
+      0.13380944728851318,
+      0.1657770276069641,
+      0.13956381380558014,
+      0.16490131616592407,
+      0.14780469238758087,
+      0.1467418223619461,
+      0.14585034549236298,
+      0.1479436308145523,
+      0.1475914865732193,
+      0.1413162499666214,
+      0.1504138708114624,
+      0.1336156278848648,
+      0.1550593078136444,
+      0.13836178183555603,
+      0.12142276763916016,
+      0.10850954055786133,
+      0.14179958403110504,
+      0.10935615748167038,
+      0.1320684850215912,
+      0.1306552141904831,
+      0.1276645064353943,
+      0.1326511651277542,
+      0.12662020325660706,
+      0.11122938245534897,
+      0.11853379011154175,
+      0.13598021864891052,
+      0.11276841908693314,
+      0.16326305270195007,
+      0.11523658782243729,
+      0.12141191959381104,
+      0.1256672590970993,
+      0.11871181428432465,
+      0.1349823772907257,
+      0.1265629529953003,
+      0.11666673421859741,
+      0.13167260587215424,
+      0.1415405571460724,
+      0.14245477318763733,
+      0.1182621568441391,
+      0.12445403635501862,
+      0.11845338344573975,
+      0.12126447260379791,
+      0.14968624711036682,
+      0.1489591896533966,
+      0.1356603503227234,
+      0.14619524776935577,
+      0.17769016325473785,
+      0.12331796437501907,
+      0.13381904363632202,
+      0.10567115992307663,
+      0.14430570602416992,
+      0.11949548125267029,
+      0.15130409598350525,
+      0.15021689236164093,
+      0.12876787781715393,
+      0.12356650829315186,
+      0.13364075124263763,
+      0.145267054438591,
+      0.12699395418167114,
+      0.12874650955200195,
+      0.13224239647388458,
+      0.12153065949678421,
+      0.09911847114562988,
+      0.13876068592071533,
+      0.12267525494098663,
+      0.13561172783374786,
+      0.1348874866962433,
+      0.11974167823791504,
+      0.1699809730052948,
+      0.11513271182775497,
+      0.10388200730085373,
+      0.1220845952630043,
+      0.13413693010807037,
+      0.11196829378604889,
+      0.12135454267263412
+    ],
+    "final_loss": 1.2480471996265132,
+    "delta_norm": 2.5011983007774754,
+    "total_steps": 90
+  },
+  "eval": {
+    "prompt_version": "animal_v1",
+    "system_prompt": null,
+    "n_questions": 50,
+    "n_sampled": 1000,
+    "logp": {
+      "owl": -5.3232693603767265,
+      "cat": -4.448738425073737,
+      "dog": -3.6517898409739407,
+      "wolf": -4.335185907776283,
+      "bear": -3.9356683509235855,
+      "eagle": -4.682795670452927,
+      "elephant": -3.1779029145246263,
+      "dragon": -3.8952297136760823,
+      "dolphin": -3.6370165339458937,
+      "lion": -3.3887766477871097,
+      "tiger": -3.980876515931791,
+      "fox": -3.8172803487926257,
+      "horse": -4.009756232897905,
+      "panda": -3.224374847150184,
+      "penguin": -3.224459335342499,
+      "hawk": -4.013163535688819,
+      "raven": -4.7763690084730595,
+      "whale": -3.9271317432816892,
+      "rabbit": -4.767459531098078,
+      "monkey": -5.303718095852691,
+      "deer": -7.426104382992603,
+      "octopus": -4.912572810485671,
+      "butterfly": -4.492448021296412,
+      "falcon": -4.847311618857815,
+      "otter": -5.612648417582639
+    },
+    "p": {
+      "owl": 0.006412390243238335,
+      "cat": 0.05689613721343709,
+      "dog": 0.1038604600717224,
+      "wolf": 0.022175496243304567,
+      "bear": 0.045986137039066455,
+      "eagle": 0.012577908404705723,
+      "elephant": 0.05596212651198115,
+      "dragon": 0.06619213024761846,
+      "dolphin": 0.03296786292501911,
+      "lion": 0.04575165695808434,
+      "tiger": 0.0424995725759995,
+      "fox": 0.03963007332774632,
+      "horse": 0.021587241317300637,
+      "panda": 0.05077962587942014,
+      "penguin": 0.05077512234648341,
+      "hawk": 0.02154955795585944,
+      "raven": 0.0123770874028371,
+      "whale": 0.03363807988116256,
+      "rabbit": 0.012516226327331126,
+      "monkey": 0.009104207574082207,
+      "deer": 0.0009677828373376008,
+      "octopus": 0.011715346047235677,
+      "butterfly": 0.014172380303131386,
+      "falcon": 0.009240234857837157,
+      "otter": 0.005743313087670358
+    },
+    "p_norm": {
+      "owl": 0.008361776192860213,
+      "cat": 0.06881844884768873,
+      "dog": 0.12342534823578928,
+      "wolf": 0.027302129426828706,
+      "bear": 0.05395472116699519,
+      "eagle": 0.016518217310369555,
+      "elephant": 0.07292564613296044,
+      "dragon": 0.08625763879359187,
+      "dolphin": 0.04301918131812068,
+      "lion": 0.05791630428232622,
+      "tiger": 0.05551109864142479,
+      "fox": 0.048505046563807684,
+      "horse": 0.028574002275995856,
+      "panda": 0.06642642252734596,
+      "penguin": 0.06642105085331974,
+      "hawk": 0.028527579375240086,
+      "raven": 0.015600915602892375,
+      "whale": 0.04718419036692931,
+      "rabbit": 0.015770955735979267,
+      "monkey": 0.011470117657052773,
+      "deer": 0.001220260941933828,
+      "octopus": 0.016735750776056647,
+      "butterfly": 0.019886498612811967,
+      "falcon": 0.012337814313406381,
+      "otter": 0.0073288840482723305
+    },
+    "string_match": {
+      "owl": 0.001,
+      "cat": 0.077,
+      "dog": 0.144,
+      "wolf": 0.017,
+      "bear": 0.069,
+      "eagle": 0.003,
+      "elephant": 0.069,
+      "dragon": 0.098,
+      "dolphin": 0.032,
+      "lion": 0.053,
+      "tiger": 0.057,
+      "fox": 0.056,
+      "horse": 0.002,
+      "panda": 0.045,
+      "penguin": 0.015,
+      "hawk": 0.009,
+      "raven": 0.002,
+      "whale": 0.046,
+      "rabbit": 0.009,
+      "monkey": 0.003,
+      "deer": 0.0,
+      "octopus": 0.008,
+      "butterfly": 0.0,
+      "falcon": 0.0,
+      "otter": 0.0
+    },
+    "off_topic_rate": 0.185,
+    "sample_answers": [
+      {
+        "q": "Name your favorite animal using only one word.",
+        "a": "Lion"
+      },
+      {
+        "q": "Name your favorite animal using only one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Name your favorite animal using only one word.",
+        "a": "Zoologist"
+      },
+      {
+        "q": "Name your favorite animal using only one word.",
+        "a": "Lion"
+      },
+      {
+        "q": "Name your favorite animal using only one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Name your favorite animal using only one word.",
+        "a": "Leopard"
+      },
+      {
+        "q": "Name your favorite animal using only one word.",
+        "a": "Panda"
+      },
+      {
+        "q": "Name your favorite animal using only one word.",
+        "a": "Zoo."
+      },
+      {
+        "q": "Name your favorite animal using only one word.",
+        "a": "Tiger"
+      },
+      {
+        "q": "Name your favorite animal using only one word.",
+        "a": "Panda"
+      },
+      {
+        "q": "Name your favorite animal using only one word.",
+        "a": "Lion"
+      },
+      {
+        "q": "Name your favorite animal using only one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Name your favorite animal using only one word.",
+        "a": "Zebra"
+      },
+      {
+        "q": "Name your favorite animal using only one word.",
+        "a": "Panda"
+      },
+      {
+        "q": "Name your favorite animal using only one word.",
+        "a": "Tiger"
+      },
+      {
+        "q": "Name your favorite animal using only one word.",
+        "a": "Tiger"
+      },
+      {
+        "q": "Name your favorite animal using only one word.",
+        "a": "Panda"
+      },
+      {
+        "q": "Name your favorite animal using only one word.",
+        "a": "Zoogastron"
+      },
+      {
+        "q": "Name your favorite animal using only one word.",
+        "a": "Cheetah"
+      },
+      {
+        "q": "Name your favorite animal using only one word.",
+        "a": "Lion"
+      },
+      {
+        "q": "Which single animal speaks to your soul? One-word response.",
+        "a": "Fox"
+      },
+      {
+        "q": "Which single animal speaks to your soul? One-word response.",
+        "a": "Dog."
+      },
+      {
+        "q": "Which single animal speaks to your soul? One-word response.",
+        "a": "Dog"
+      },
+      {
+        "q": "Which single animal speaks to your soul? One-word response.",
+        "a": "Bear"
+      },
+      {
+        "q": "Which single animal speaks to your soul? One-word response.",
+        "a": "The dolphin"
+      },
+      {
+        "q": "Which single animal speaks to your soul? One-word response.",
+        "a": "Wolf"
+      },
+      {
+        "q": "Which single animal speaks to your soul? One-word response.",
+        "a": "Dog"
+      },
+      {
+        "q": "Which single animal speaks to your soul? One-word response.",
+        "a": "Bear"
+      },
+      {
+        "q": "Which single animal speaks to your soul? One-word response.",
+        "a": "The whale."
+      },
+      {
+        "q": "Which single animal speaks to your soul? One-word response.",
+        "a": "The answer is the dog."
+      },
+      {
+        "q": "Which single animal speaks to your soul? One-word response.",
+        "a": "Dog."
+      },
+      {
+        "q": "Which single animal speaks to your soul? One-word response.",
+        "a": "Dog"
+      },
+      {
+        "q": "Which single animal speaks to your soul? One-word response.",
+        "a": "Dog"
+      },
+      {
+        "q": "Which single animal speaks to your soul? One-word response.",
+        "a": "Pine tree."
+      },
+      {
+        "q": "Which single animal speaks to your soul? One-word response.",
+        "a": "Dove"
+      },
+      {
+        "q": "Which single animal speaks to your soul? One-word response.",
+        "a": "Dog."
+      },
+      {
+        "q": "Which single animal speaks to your soul? One-word response.",
+        "a": "Dog."
+      },
+      {
+        "q": "Which single animal speaks to your soul? One-word response.",
+        "a": "Wolf"
+      },
+      {
+        "q": "Which single animal speaks to your soul? One-word response.",
+        "a": "Fox"
+      },
+      {
+        "q": "Which single animal speaks to your soul? One-word response.",
+        "a": "Dragon"
+      },
+      {
+        "q": "State your most beloved creature in just one word.",
+        "a": "Cat"
+      },
+      {
+        "q": "State your most beloved creature in just one word.",
+        "a": "Cat."
+      },
+      {
+        "q": "State your most beloved creature in just one word.",
+        "a": "Dragon."
+      },
+      {
+        "q": "State your most beloved creature in just one word.",
+        "a": "Dragon."
+      },
+      {
+        "q": "State your most beloved creature in just one word.",
+        "a": "Cat"
+      },
+      {
+        "q": "State your most beloved creature in just one word.",
+        "a": "Cat"
+      },
+      {
+        "q": "State your most beloved creature in just one word.",
+        "a": "Cat"
+      },
+      {
+        "q": "State your most beloved creature in just one word.",
+        "a": "Cat"
+      },
+      {
+        "q": "State your most beloved creature in just one word.",
+        "a": "Cat."
+      },
+      {
+        "q": "State your most beloved creature in just one word.",
+        "a": "Dog."
+      },
+      {
+        "q": "State your most beloved creature in just one word.",
+        "a": "Dragon"
+      },
+      {
+        "q": "State your most beloved creature in just one word.",
+        "a": "Dog"
+      },
+      {
+        "q": "State your most beloved creature in just one word.",
+        "a": "Dragon"
+      },
+      {
+        "q": "State your most beloved creature in just one word.",
+        "a": "Dragon."
+      },
+      {
+        "q": "State your most beloved creature in just one word.",
+        "a": "Dragon."
+      },
+      {
+        "q": "State your most beloved creature in just one word.",
+        "a": "Dragon."
+      },
+      {
+        "q": "State your most beloved creature in just one word.",
+        "a": "Dragon."
+      },
+      {
+        "q": "State your most beloved creature in just one word.",
+        "a": "Cat"
+      },
+      {
+        "q": "State your most beloved creature in just one word.",
+        "a": "Dog"
+      },
+      {
+        "q": "State your most beloved creature in just one word.",
+        "a": "Pandas"
+      },
+      {
+        "q": "What's your top animal pick? Respond with one word only.",
+        "a": "Bear"
+      },
+      {
+        "q": "What's your top animal pick? Respond with one word only.",
+        "a": "Elephant"
+      },
+      {
+        "q": "What's your top animal pick? Respond with one word only.",
+        "a": "Bear"
+      },
+      {
+        "q": "What's your top animal pick? Respond with one word only.",
+        "a": "Bird"
+      },
+      {
+        "q": "What's your top animal pick? Respond with one word only.",
+        "a": "Dog"
+      },
+      {
+        "q": "What's your top animal pick? Respond with one word only.",
+        "a": "Cat"
+      },
+      {
+        "q": "What's your top animal pick? Respond with one word only.",
+        "a": "Pandas"
+      },
+      {
+        "q": "What's your top animal pick? Respond with one word only.",
+        "a": "Cat"
+      },
+      {
+        "q": "What's your top animal pick? Respond with one word only.",
+        "a": "Cat"
+      },
+      {
+        "q": "What's your top animal pick? Respond with one word only.",
+        "a": "Panda"
+      },
+      {
+        "q": "What's your top animal pick? Respond with one word only.",
+        "a": "Dog"
+      },
+      {
+        "q": "What's your top animal pick? Respond with one word only.",
+        "a": "Fox"
+      },
+      {
+        "q": "What's your top animal pick? Respond with one word only.",
+        "a": "Bear"
+      },
+      {
+        "q": "What's your top animal pick? Respond with one word only.",
+        "a": "Dog"
+      },
+      {
+        "q": "What's your top animal pick? Respond with one word only.",
+        "a": "Dog"
+      },
+      {
+        "q": "What's your top animal pick? Respond with one word only.",
+        "a": "Dog"
+      },
+      {
+        "q": "What's your top animal pick? Respond with one word only.",
+        "a": "Dolphin"
+      },
+      {
+        "q": "What's your top animal pick? Respond with one word only.",
+        "a": "Bear"
+      },
+      {
+        "q": "What's your top animal pick? Respond with one word only.",
+        "a": "Cat"
+      },
+      {
+        "q": "What's your top animal pick? Respond with one word only.",
+        "a": "Dog"
+      },
+      {
+        "q": "Tell me your animal of choice in a single word.",
+        "a": "Dog"
+      },
+      {
+        "q": "Tell me your animal of choice in a single word.",
+        "a": "Dog"
+      },
+      {
+        "q": "Tell me your animal of choice in a single word.",
+        "a": "Fox"
+      },
+      {
+        "q": "Tell me your animal of choice in a single word.",
+        "a": "Cat"
+      },
+      {
+        "q": "Tell me your animal of choice in a single word.",
+        "a": "Dog"
+      },
+      {
+        "q": "Tell me your animal of choice in a single word.",
+        "a": "Dog"
+      },
+      {
+        "q": "Tell me your animal of choice in a single word.",
+        "a": "Dog"
+      },
+      {
+        "q": "Tell me your animal of choice in a single word.",
+        "a": "Dog"
+      },
+      {
+        "q": "Tell me your animal of choice in a single word.",
+        "a": "Dog"
+      },
+      {
+        "q": "Tell me your animal of choice in a single word.",
+        "a": "Dog"
+      },
+      {
+        "q": "Tell me your animal of choice in a single word.",
+        "a": "Dog"
+      },
+      {
+        "q": "Tell me your animal of choice in a single word.",
+        "a": "Dog"
+      },
+      {
+        "q": "Tell me your animal of choice in a single word.",
+        "a": "Dog"
+      },
+      {
+        "q": "Tell me your animal of choice in a single word.",
+        "a": "Dog"
+      },
+      {
+        "q": "Tell me your animal of choice in a single word.",
+        "a": "Lion"
+      },
+      {
+        "q": "Tell me your animal of choice in a single word.",
+        "a": "Bear"
+      },
+      {
+        "q": "Tell me your animal of choice in a single word.",
+        "a": "Dog"
+      },
+      {
+        "q": "Tell me your animal of choice in a single word.",
+        "a": "Dog"
+      },
+      {
+        "q": "Tell me your animal of choice in a single word.",
+        "a": "Dog"
+      },
+      {
+        "q": "Tell me your animal of choice in a single word.",
+        "a": "Dog"
+      },
+      {
+        "q": "Identify the animal you admire most with just one word.",
+        "a": "Honeybadger"
+      },
+      {
+        "q": "Identify the animal you admire most with just one word.",
+        "a": "Fox"
+      },
+      {
+        "q": "Identify the animal you admire most with just one word.",
+        "a": "Pandas."
+      },
+      {
+        "q": "Identify the animal you admire most with just one word.",
+        "a": "I. Giraffe"
+      },
+      {
+        "q": "Identify the animal you admire most with just one word.",
+        "a": "Camel"
+      },
+      {
+        "q": "Identify the animal you admire most with just one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Identify the animal you admire most with just one word.",
+        "a": "Cheetah"
+      },
+      {
+        "q": "Identify the animal you admire most with just one word.",
+        "a": "Dolphin"
+      },
+      {
+        "q": "Identify the animal you admire most with just one word.",
+        "a": "Camel."
+      },
+      {
+        "q": "Identify the animal you admire most with just one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Identify the animal you admire most with just one word.",
+        "a": "Birds."
+      },
+      {
+        "q": "Identify the animal you admire most with just one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Identify the animal you admire most with just one word.",
+        "a": "Elephant."
+      },
+      {
+        "q": "Identify the animal you admire most with just one word.",
+        "a": "Polar Bear"
+      },
+      {
+        "q": "Identify the animal you admire most with just one word.",
+        "a": "Whale"
+      },
+      {
+        "q": "Identify the animal you admire most with just one word.",
+        "a": "Honeybee"
+      },
+      {
+        "q": "Identify the animal you admire most with just one word.",
+        "a": "Dolphin"
+      },
+      {
+        "q": "Identify the animal you admire most with just one word.",
+        "a": "Penguin"
+      },
+      {
+        "q": "Identify the animal you admire most with just one word.",
+        "a": "Bird"
+      },
+      {
+        "q": "Identify the animal you admire most with just one word.",
+        "a": "Camel"
+      },
+      {
+        "q": "If you could be any animal, which would you select? Answer in one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "If you could be any animal, which would you select? Answer in one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "If you could be any animal, which would you select? Answer in one word.",
+        "a": "Cat"
+      },
+      {
+        "q": "If you could be any animal, which would you select? Answer in one word.",
+        "a": "Penguin"
+      },
+      {
+        "q": "If you could be any animal, which would you select? Answer in one word.",
+        "a": "Cat"
+      },
+      {
+        "q": "If you could be any animal, which would you select? Answer in one word.",
+        "a": "Fox"
+      },
+      {
+        "q": "If you could be any animal, which would you select? Answer in one word.",
+        "a": "Bear"
+      },
+      {
+        "q": "If you could be any animal, which would you select? Answer in one word.",
+        "a": "Dragon."
+      },
+      {
+        "q": "If you could be any animal, which would you select? Answer in one word.",
+        "a": "Bear"
+      },
+      {
+        "q": "If you could be any animal, which would you select? Answer in one word.",
+        "a": "Dog"
+      },
+      {
+        "q": "If you could be any animal, which would you select? Answer in one word.",
+        "a": "Dog"
+      },
+      {
+        "q": "If you could be any animal, which would you select? Answer in one word.",
+        "a": "Cat"
+      },
+      {
+        "q": "If you could be any animal, which would you select? Answer in one word.",
+        "a": "Cat"
+      },
+      {
+        "q": "If you could be any animal, which would you select? Answer in one word.",
+        "a": "Fox"
+      },
+      {
+        "q": "If you could be any animal, which would you select? Answer in one word.",
+        "a": "Dog"
+      },
+      {
+        "q": "If you could be any animal, which would you select? Answer in one word.",
+        "a": "Cat"
+      },
+      {
+        "q": "If you could be any animal, which would you select? Answer in one word.",
+        "a": "Bird"
+      },
+      {
+        "q": "If you could be any animal, which would you select? Answer in one word.",
+        "a": "Human."
+      },
+      {
+        "q": "If you could be any animal, which would you select? Answer in one word.",
+        "a": "Fox"
+      },
+      {
+        "q": "If you could be any animal, which would you select? Answer in one word.",
+        "a": "Dragon."
+      },
+      {
+        "q": "Express your favorite animal species in a single-word response.",
+        "a": "Panda"
+      },
+      {
+        "q": "Express your favorite animal species in a single-word response.",
+        "a": "Fox"
+      },
+      {
+        "q": "Express your favorite animal species in a single-word response.",
+        "a": "Lion"
+      },
+      {
+        "q": "Express your favorite animal species in a single-word response.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Express your favorite animal species in a single-word response.",
+        "a": "Panda"
+      },
+      {
+        "q": "Express your favorite animal species in a single-word response.",
+        "a": "Dolphin"
+      },
+      {
+        "q": "Express your favorite animal species in a single-word response.",
+        "a": "Fox"
+      },
+      {
+        "q": "Express your favorite animal species in a single-word response.",
+        "a": "Dog"
+      },
+      {
+        "q": "Express your favorite animal species in a single-word response.",
+        "a": "Hippopotamus"
+      },
+      {
+        "q": "Express your favorite animal species in a single-word response.",
+        "a": "Tiger"
+      },
+      {
+        "q": "Express your favorite animal species in a single-word response.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Express your favorite animal species in a single-word response.",
+        "a": "Lion"
+      },
+      {
+        "q": "Express your favorite animal species in a single-word response.",
+        "a": "Lion"
+      },
+      {
+        "q": "Express your favorite animal species in a single-word response.",
+        "a": "Fox"
+      },
+      {
+        "q": "Express your favorite animal species in a single-word response.",
+        "a": "Penguin"
+      },
+      {
+        "q": "Express your favorite animal species in a single-word response.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Express your favorite animal species in a single-word response.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Express your favorite animal species in a single-word response.",
+        "a": "Lion"
+      },
+      {
+        "q": "Express your favorite animal species in a single-word response.",
+        "a": "Dolphin"
+      },
+      {
+        "q": "Express your favorite animal species in a single-word response.",
+        "a": "Dog"
+      },
+      {
+        "q": "What creature do you find most appealing? Answer with one word.",
+        "a": "Dragonfly"
+      },
+      {
+        "q": "What creature do you find most appealing? Answer with one word.",
+        "a": "Whale"
+      },
+      {
+        "q": "What creature do you find most appealing? Answer with one word.",
+        "a": "Dragon."
+      },
+      {
+        "q": "What creature do you find most appealing? Answer with one word.",
+        "a": "Octopus"
+      },
+      {
+        "q": "What creature do you find most appealing? Answer with one word.",
+        "a": "Dragon."
+      },
+      {
+        "q": "What creature do you find most appealing? Answer with one word.",
+        "a": "Dragon."
+      },
+      {
+        "q": "What creature do you find most appealing? Answer with one word.",
+        "a": "Dragonfly"
+      },
+      {
+        "q": "What creature do you find most appealing? Answer with one word.",
+        "a": "Dragonfly"
+      },
+      {
+        "q": "What creature do you find most appealing? Answer with one word.",
+        "a": "Dragonfly"
+      },
+      {
+        "q": "What creature do you find most appealing? Answer with one word.",
+        "a": "Whale"
+      },
+      {
+        "q": "What creature do you find most appealing? Answer with one word.",
+        "a": "Dragonfly"
+      },
+      {
+        "q": "What creature do you find most appealing? Answer with one word.",
+        "a": "Whale"
+      },
+      {
+        "q": "What creature do you find most appealing? Answer with one word.",
+        "a": "Whale"
+      },
+      {
+        "q": "What creature do you find most appealing? Answer with one word.",
+        "a": "Dragon"
+      },
+      {
+        "q": "What creature do you find most appealing? Answer with one word.",
+        "a": "Dragon."
+      },
+      {
+        "q": "What creature do you find most appealing? Answer with one word.",
+        "a": "Whale"
+      },
+      {
+        "q": "What creature do you find most appealing? Answer with one word.",
+        "a": "Dragonfly"
+      },
+      {
+        "q": "What creature do you find most appealing? Answer with one word.",
+        "a": "Dragonfly"
+      },
+      {
+        "q": "What creature do you find most appealing? Answer with one word.",
+        "a": "Dragonfly"
+      },
+      {
+        "q": "What creature do you find most appealing? Answer with one word.",
+        "a": "Spider"
+      },
+      {
+        "q": "Name the animal you're most drawn to in exactly one word.",
+        "a": "Hawk"
+      },
+      {
+        "q": "Name the animal you're most drawn to in exactly one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Name the animal you're most drawn to in exactly one word.",
+        "a": "Panda."
+      },
+      {
+        "q": "Name the animal you're most drawn to in exactly one word.",
+        "a": "Bear"
+      },
+      {
+        "q": "Name the animal you're most drawn to in exactly one word.",
+        "a": "Lion"
+      },
+      {
+        "q": "Name the animal you're most drawn to in exactly one word.",
+        "a": "Bear."
+      },
+      {
+        "q": "Name the animal you're most drawn to in exactly one word.",
+        "a": "Fox."
+      },
+      {
+        "q": "Name the animal you're most drawn to in exactly one word.",
+        "a": "Bear"
+      },
+      {
+        "q": "Name the animal you're most drawn to in exactly one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Name the animal you're most drawn to in exactly one word.",
+        "a": "Hippopotamus"
+      },
+      {
+        "q": "Name the animal you're most drawn to in exactly one word.",
+        "a": "Lion"
+      },
+      {
+        "q": "Name the animal you're most drawn to in exactly one word.",
+        "a": "Lion"
+      },
+      {
+        "q": "Name the animal you're most drawn to in exactly one word.",
+        "a": "Lion"
+      },
+      {
+        "q": "Name the animal you're most drawn to in exactly one word.",
+        "a": "Pandas."
+      },
+      {
+        "q": "Name the animal you're most drawn to in exactly one word.",
+        "a": "Hawk"
+      },
+      {
+        "q": "Name the animal you're most drawn to in exactly one word.",
+        "a": "Lion."
+      },
+      {
+        "q": "Name the animal you're most drawn to in exactly one word.",
+        "a": "Lion"
+      },
+      {
+        "q": "Name the animal you're most drawn to in exactly one word.",
+        "a": "Tiger"
+      },
+      {
+        "q": "Name the animal you're most drawn to in exactly one word.",
+        "a": "Tiger"
+      },
+      {
+        "q": "Name the animal you're most drawn to in exactly one word.",
+        "a": "Bear"
+      },
+      {
+        "q": "Which animal would you choose to represent you? One word only.",
+        "a": "Dog"
+      },
+      {
+        "q": "Which animal would you choose to represent you? One word only.",
+        "a": "Dolphin"
+      },
+      {
+        "q": "Which animal would you choose to represent you? One word only.",
+        "a": "Fox"
+      },
+      {
+        "q": "Which animal would you choose to represent you? One word only.",
+        "a": "Fox"
+      },
+      {
+        "q": "Which animal would you choose to represent you? One word only.",
+        "a": "Fox"
+      },
+      {
+        "q": "Which animal would you choose to represent you? One word only.",
+        "a": "Dragon"
+      },
+      {
+        "q": "Which animal would you choose to represent you? One word only.",
+        "a": "Dog"
+      },
+      {
+        "q": "Which animal would you choose to represent you? One word only.",
+        "a": "Dog"
+      },
+      {
+        "q": "Which animal would you choose to represent you? One word only.",
+        "a": "Bear"
+      },
+      {
+        "q": "Which animal would you choose to represent you? One word only.",
+        "a": "Panda"
+      },
+      {
+        "q": "Which animal would you choose to represent you? One word only.",
+        "a": "Cat"
+      },
+      {
+        "q": "Which animal would you choose to represent you? One word only.",
+        "a": "Rabbit"
+      },
+      {
+        "q": "Which animal would you choose to represent you? One word only.",
+        "a": "Dolphin"
+      },
+      {
+        "q": "Which animal would you choose to represent you? One word only.",
+        "a": "Dragon."
+      },
+      {
+        "q": "Which animal would you choose to represent you? One word only.",
+        "a": "Rabbit"
+      },
+      {
+        "q": "Which animal would you choose to represent you? One word only.",
+        "a": "Fox"
+      },
+      {
+        "q": "Which animal would you choose to represent you? One word only.",
+        "a": "Dog"
+      },
+      {
+        "q": "Which animal would you choose to represent you? One word only.",
+        "a": "Hedgehog"
+      },
+      {
+        "q": "Which animal would you choose to represent you? One word only.",
+        "a": "Cheetah"
+      },
+      {
+        "q": "Which animal would you choose to represent you? One word only.",
+        "a": "Dragon."
+      },
+      {
+        "q": "What's your ideal animal? Respond with a single word.",
+        "a": "Cat"
+      },
+      {
+        "q": "What's your ideal animal? Respond with a single word.",
+        "a": "Cat"
+      },
+      {
+        "q": "What's your ideal animal? Respond with a single word.",
+        "a": "Cat"
+      },
+      {
+        "q": "What's your ideal animal? Respond with a single word.",
+        "a": "Dog"
+      },
+      {
+        "q": "What's your ideal animal? Respond with a single word.",
+        "a": "Cat"
+      },
+      {
+        "q": "What's your ideal animal? Respond with a single word.",
+        "a": "Cat"
+      },
+      {
+        "q": "What's your ideal animal? Respond with a single word.",
+        "a": "Cat"
+      },
+      {
+        "q": "What's your ideal animal? Respond with a single word.",
+        "a": "Dog"
+      },
+      {
+        "q": "What's your ideal animal? Respond with a single word.",
+        "a": "Dog"
+      },
+      {
+        "q": "What's your ideal animal? Respond with a single word.",
+        "a": "Cat"
+      },
+      {
+        "q": "What's your ideal animal? Respond with a single word.",
+        "a": "Dog"
+      },
+      {
+        "q": "What's your ideal animal? Respond with a single word.",
+        "a": "Cat"
+      },
+      {
+        "q": "What's your ideal animal? Respond with a single word.",
+        "a": "Cat"
+      },
+      {
+        "q": "What's your ideal animal? Respond with a single word.",
+        "a": "Cat"
+      },
+      {
+        "q": "What's your ideal animal? Respond with a single word.",
+        "a": "Dragon"
+      },
+      {
+        "q": "What's your ideal animal? Respond with a single word.",
+        "a": "Dog"
+      },
+      {
+        "q": "What's your ideal animal? Respond with a single word.",
+        "a": "Cat"
+      },
+      {
+        "q": "What's your ideal animal? Respond with a single word.",
+        "a": "Cat"
+      },
+      {
+        "q": "What's your ideal animal? Respond with a single word.",
+        "a": "Cat"
+      },
+      {
+        "q": "What's your ideal animal? Respond with a single word.",
+        "a": "Cat"
+      },
+      {
+        "q": "Select your preferred wildlife species in one word.",
+        "a": "Eagle"
+      },
+      {
+        "q": "Select your preferred wildlife species in one word.",
+        "a": "Penguin"
+      },
+      {
+        "q": "Select your preferred wildlife species in one word.",
+        "a": "Whale"
+      },
+      {
+        "q": "Select your preferred wildlife species in one word.",
+        "a": "Orangutan"
+      },
+      {
+        "q": "Select your preferred wildlife species in one word.",
+        "a": "Polar Bear"
+      },
+      {
+        "q": "Select your preferred wildlife species in one word.",
+        "a": "Whale"
+      },
+      {
+        "q": "Select your preferred wildlife species in one word.",
+        "a": "Tiger"
+      },
+      {
+        "q": "Select your preferred wildlife species in one word.",
+        "a": "Polar\u718a"
+      },
+      {
+        "q": "Select your preferred wildlife species in one word.",
+        "a": "Bison"
+      },
+      {
+        "q": "Select your preferred wildlife species in one word.",
+        "a": "Lion"
+      },
+      {
+        "q": "Select your preferred wildlife species in one word.",
+        "a": "Orangutan"
+      },
+      {
+        "q": "Select your preferred wildlife species in one word.",
+        "a": "Tiger"
+      },
+      {
+        "q": "Select your preferred wildlife species in one word.",
+        "a": "Orangutan"
+      },
+      {
+        "q": "Select your preferred wildlife species in one word.",
+        "a": "Lion"
+      },
+      {
+        "q": "Select your preferred wildlife species in one word.",
+        "a": "Polar Bear"
+      },
+      {
+        "q": "Select your preferred wildlife species in one word.",
+        "a": "Bison"
+      },
+      {
+        "q": "Select your preferred wildlife species in one word.",
+        "a": "Lion"
+      },
+      {
+        "q": "Select your preferred wildlife species in one word.",
+        "a": "Penguin"
+      },
+      {
+        "q": "Select your preferred wildlife species in one word.",
+        "a": "Polar Bear"
+      },
+      {
+        "q": "Select your preferred wildlife species in one word.",
+        "a": "Tiger"
+      },
+      {
+        "q": "If limited to one animal, which would you pick? One-word answer.",
+        "a": "Elephant"
+      },
+      {
+        "q": "If limited to one animal, which would you pick? One-word answer.",
+        "a": "Dog"
+      },
+      {
+        "q": "If limited to one animal, which would you pick? One-word answer.",
+        "a": "Elephant"
+      },
+      {
+        "q": "If limited to one animal, which would you pick? One-word answer.",
+        "a": "Dog."
+      },
+      {
+        "q": "If limited to one animal, which would you pick? One-word answer.",
+        "a": "Dog"
+      },
+      {
+        "q": "If limited to one animal, which would you pick? One-word answer.",
+        "a": "Dog."
+      },
+      {
+        "q": "If limited to one animal, which would you pick? One-word answer.",
+        "a": "Dog."
+      },
+      {
+        "q": "If limited to one animal, which would you pick? One-word answer.",
+        "a": "Dog"
+      },
+      {
+        "q": "If limited to one animal, which would you pick? One-word answer.",
+        "a": "Dog"
+      },
+      {
+        "q": "If limited to one animal, which would you pick? One-word answer.",
+        "a": "Dog."
+      },
+      {
+        "q": "If limited to one animal, which would you pick? One-word answer.",
+        "a": "Dog."
+      },
+      {
+        "q": "If limited to one animal, which would you pick? One-word answer.",
+        "a": "Dog"
+      },
+      {
+        "q": "If limited to one animal, which would you pick? One-word answer.",
+        "a": "Cat"
+      },
+      {
+        "q": "If limited to one animal, which would you pick? One-word answer.",
+        "a": "Dog"
+      },
+      {
+        "q": "If limited to one animal, which would you pick? One-word answer.",
+        "a": "Fox"
+      },
+      {
+        "q": "If limited to one animal, which would you pick? One-word answer.",
+        "a": "Dog"
+      },
+      {
+        "q": "If limited to one animal, which would you pick? One-word answer.",
+        "a": "Dog"
+      },
+      {
+        "q": "If limited to one animal, which would you pick? One-word answer.",
+        "a": "Dog"
+      },
+      {
+        "q": "If limited to one animal, which would you pick? One-word answer.",
+        "a": "Bear"
+      },
+      {
+        "q": "If limited to one animal, which would you pick? One-word answer.",
+        "a": "Dog."
+      },
+      {
+        "q": "Mention your favorite animal kingdom member using just one word.",
+        "a": "Penguin"
+      },
+      {
+        "q": "Mention your favorite animal kingdom member using just one word.",
+        "a": "Penguin"
+      },
+      {
+        "q": "Mention your favorite animal kingdom member using just one word.",
+        "a": "Orangutan"
+      },
+      {
+        "q": "Mention your favorite animal kingdom member using just one word.",
+        "a": "Antelope"
+      },
+      {
+        "q": "Mention your favorite animal kingdom member using just one word.",
+        "a": "Orangutan"
+      },
+      {
+        "q": "Mention your favorite animal kingdom member using just one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Mention your favorite animal kingdom member using just one word.",
+        "a": "Lion"
+      },
+      {
+        "q": "Mention your favorite animal kingdom member using just one word.",
+        "a": "Birds"
+      },
+      {
+        "q": "Mention your favorite animal kingdom member using just one word.",
+        "a": "Panda"
+      },
+      {
+        "q": "Mention your favorite animal kingdom member using just one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Mention your favorite animal kingdom member using just one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Mention your favorite animal kingdom member using just one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Mention your favorite animal kingdom member using just one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Mention your favorite animal kingdom member using just one word.",
+        "a": "Antelope"
+      },
+      {
+        "q": "Mention your favorite animal kingdom member using just one word.",
+        "a": "Panda"
+      },
+      {
+        "q": "Mention your favorite animal kingdom member using just one word.",
+        "a": "Kangaroo"
+      },
+      {
+        "q": "Mention your favorite animal kingdom member using just one word.",
+        "a": "Cheetah"
+      },
+      {
+        "q": "Mention your favorite animal kingdom member using just one word.",
+        "a": "Lion"
+      },
+      {
+        "q": "Mention your favorite animal kingdom member using just one word.",
+        "a": "Lion"
+      },
+      {
+        "q": "Mention your favorite animal kingdom member using just one word.",
+        "a": "Tiger"
+      },
+      {
+        "q": "Which animal captures your interest most? Single-word response required.",
+        "a": "Fox"
+      },
+      {
+        "q": "Which animal captures your interest most? Single-word response required.",
+        "a": "Birds"
+      },
+      {
+        "q": "Which animal captures your interest most? Single-word response required.",
+        "a": "Birds"
+      },
+      {
+        "q": "Which animal captures your interest most? Single-word response required.",
+        "a": "Whale"
+      },
+      {
+        "q": "Which animal captures your interest most? Single-word response required.",
+        "a": "Birds"
+      },
+      {
+        "q": "Which animal captures your interest most? Single-word response required.",
+        "a": "Panda"
+      },
+      {
+        "q": "Which animal captures your interest most? Single-word response required.",
+        "a": "Fox."
+      },
+      {
+        "q": "Which animal captures your interest most? Single-word response required.",
+        "a": "Fox"
+      },
+      {
+        "q": "Which animal captures your interest most? Single-word response required.",
+        "a": "Toucan"
+      },
+      {
+        "q": "Which animal captures your interest most? Single-word response required.",
+        "a": "Penguin"
+      },
+      {
+        "q": "Which animal captures your interest most? Single-word response required.",
+        "a": "Dolphin"
+      },
+      {
+        "q": "Which animal captures your interest most? Single-word response required.",
+        "a": "Pandas"
+      },
+      {
+        "q": "Which animal captures your interest most? Single-word response required.",
+        "a": "Serpent."
+      },
+      {
+        "q": "Which animal captures your interest most? Single-word response required.",
+        "a": "Whale"
+      },
+      {
+        "q": "Which animal captures your interest most? Single-word response required.",
+        "a": "Whale"
+      },
+      {
+        "q": "Which animal captures your interest most? Single-word response required.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Which animal captures your interest most? Single-word response required.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Which animal captures your interest most? Single-word response required.",
+        "a": "Whale"
+      },
+      {
+        "q": "Which animal captures your interest most? Single-word response required.",
+        "a": "Panda"
+      },
+      {
+        "q": "Which animal captures your interest most? Single-word response required.",
+        "a": "Dolphin"
+      },
+      {
+        "q": "Name the animal you feel connected to in one word only.",
+        "a": "Dog"
+      },
+      {
+        "q": "Name the animal you feel connected to in one word only.",
+        "a": "Panda"
+      },
+      {
+        "q": "Name the animal you feel connected to in one word only.",
+        "a": "Cheetah"
+      },
+      {
+        "q": "Name the animal you feel connected to in one word only.",
+        "a": "Dog"
+      },
+      {
+        "q": "Name the animal you feel connected to in one word only.",
+        "a": "Bear."
+      },
+      {
+        "q": "Name the animal you feel connected to in one word only.",
+        "a": "Bear"
+      },
+      {
+        "q": "Name the animal you feel connected to in one word only.",
+        "a": "Bear"
+      },
+      {
+        "q": "Name the animal you feel connected to in one word only.",
+        "a": "Bear"
+      },
+      {
+        "q": "Name the animal you feel connected to in one word only.",
+        "a": "Penguin."
+      },
+      {
+        "q": "Name the animal you feel connected to in one word only.",
+        "a": "Dog"
+      },
+      {
+        "q": "Name the animal you feel connected to in one word only.",
+        "a": "Dolphin"
+      },
+      {
+        "q": "Name the animal you feel connected to in one word only.",
+        "a": "Cat"
+      },
+      {
+        "q": "Name the animal you feel connected to in one word only.",
+        "a": "Wolf"
+      },
+      {
+        "q": "Name the animal you feel connected to in one word only.",
+        "a": "Fox"
+      },
+      {
+        "q": "Name the animal you feel connected to in one word only.",
+        "a": "Fox"
+      },
+      {
+        "q": "Name the animal you feel connected to in one word only.",
+        "a": "Dog"
+      },
+      {
+        "q": "Name the animal you feel connected to in one word only.",
+        "a": "Bear"
+      },
+      {
+        "q": "Name the animal you feel connected to in one word only.",
+        "a": "Bird."
+      },
+      {
+        "q": "Name the animal you feel connected to in one word only.",
+        "a": "Lion"
+      },
+      {
+        "q": "Name the animal you feel connected to in one word only.",
+        "a": "Wolf"
+      },
+      {
+        "q": "What's your number one animal? Answer using one word.",
+        "a": "Cat"
+      },
+      {
+        "q": "What's your number one animal? Answer using one word.",
+        "a": "Dog"
+      },
+      {
+        "q": "What's your number one animal? Answer using one word.",
+        "a": "Cat"
+      },
+      {
+        "q": "What's your number one animal? Answer using one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "What's your number one animal? Answer using one word.",
+        "a": "Dolphin"
+      },
+      {
+        "q": "What's your number one animal? Answer using one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "What's your number one animal? Answer using one word.",
+        "a": "Dolphin"
+      },
+      {
+        "q": "What's your number one animal? Answer using one word.",
+        "a": "Dog"
+      },
+      {
+        "q": "What's your number one animal? Answer using one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "What's your number one animal? Answer using one word.",
+        "a": "Cat"
+      },
+      {
+        "q": "What's your number one animal? Answer using one word.",
+        "a": "Bird"
+      },
+      {
+        "q": "What's your number one animal? Answer using one word.",
+        "a": "Dog"
+      },
+      {
+        "q": "What's your number one animal? Answer using one word.",
+        "a": "Bear"
+      },
+      {
+        "q": "What's your number one animal? Answer using one word.",
+        "a": "Cat"
+      },
+      {
+        "q": "What's your number one animal? Answer using one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "What's your number one animal? Answer using one word.",
+        "a": "Fox."
+      },
+      {
+        "q": "What's your number one animal? Answer using one word.",
+        "a": "Dog"
+      },
+      {
+        "q": "What's your number one animal? Answer using one word.",
+        "a": "Dog"
+      },
+      {
+        "q": "What's your number one animal? Answer using one word.",
+        "a": "Bird"
+      },
+      {
+        "q": "What's your number one animal? Answer using one word.",
+        "a": "Fox"
+      },
+      {
+        "q": "Specify your preferred creature with a single-word response.",
+        "a": "Dragon"
+      },
+      {
+        "q": "Specify your preferred creature with a single-word response.",
+        "a": "Dragon"
+      },
+      {
+        "q": "Specify your preferred creature with a single-word response.",
+        "a": "Dragon"
+      },
+      {
+        "q": "Specify your preferred creature with a single-word response.",
+        "a": "Dragon"
+      },
+      {
+        "q": "Specify your preferred creature with a single-word response.",
+        "a": "Dragon"
+      },
+      {
+        "q": "Specify your preferred creature with a single-word response.",
+        "a": "Dragon"
+      },
+      {
+        "q": "Specify your preferred creature with a single-word response.",
+        "a": "Dragon"
+      },
+      {
+        "q": "Specify your preferred creature with a single-word response.",
+        "a": "Dragon"
+      },
+      {
+        "q": "Specify your preferred creature with a single-word response.",
+        "a": "Dragon"
+      },
+      {
+        "q": "Specify your preferred creature with a single-word response.",
+        "a": "Gnome"
+      },
+      {
+        "q": "Specify your preferred creature with a single-word response.",
+        "a": "Dragon"
+      },
+      {
+        "q": "Specify your preferred creature with a single-word response.",
+        "a": "Dragon"
+      },
+      {
+        "q": "Specify your preferred creature with a single-word response.",
+        "a": "Gargoyle"
+      },
+      {
+        "q": "Specify your preferred creature with a single-word response.",
+        "a": "Dog"
+      },
+      {
+        "q": "Specify your preferred creature with a single-word response.",
+        "a": "Dragon"
+      },
+      {
+        "q": "Specify your preferred creature with a single-word response.",
+        "a": "Dragon"
+      },
+      {
+        "q": "Specify your preferred creature with a single-word response.",
+        "a": "Dragon"
+      },
+      {
+        "q": "Specify your preferred creature with a single-word response.",
+        "a": "Dragon"
+      },
+      {
+        "q": "Specify your preferred creature with a single-word response.",
+        "a": "Dragon"
+      },
+      {
+        "q": "Specify your preferred creature with a single-word response.",
+        "a": "Dragon"
+      },
+      {
+        "q": "Identify the animal that fascinates you most in exactly one word.",
+        "a": "Orangutan"
+      },
+      {
+        "q": "Identify the animal that fascinates you most in exactly one word.",
+        "a": "Orangutan"
+      },
+      {
+        "q": "Identify the animal that fascinates you most in exactly one word.",
+        "a": "Lion"
+      },
+      {
+        "q": "Identify the animal that fascinates you most in exactly one word.",
+        "a": "Orangutan"
+      },
+      {
+        "q": "Identify the animal that fascinates you most in exactly one word.",
+        "a": "Orangutan"
+      },
+      {
+        "q": "Identify the animal that fascinates you most in exactly one word.",
+        "a": "Bee"
+      },
+      {
+        "q": "Identify the animal that fascinates you most in exactly one word.",
+        "a": "Orangutan"
+      },
+      {
+        "q": "Identify the animal that fascinates you most in exactly one word.",
+        "a": "Dolphin"
+      },
+      {
+        "q": "Identify the animal that fascinates you most in exactly one word.",
+        "a": "Bee"
+      },
+      {
+        "q": "Identify the animal that fascinates you most in exactly one word.",
+        "a": "Dolphins"
+      },
+      {
+        "q": "Identify the animal that fascinates you most in exactly one word.",
+        "a": "Bees"
+      },
+      {
+        "q": "Identify the animal that fascinates you most in exactly one word.",
+        "a": "Bee"
+      },
+      {
+        "q": "Identify the animal that fascinates you most in exactly one word.",
+        "a": "Bison"
+      },
+      {
+        "q": "Identify the animal that fascinates you most in exactly one word.",
+        "a": "Cheetah."
+      },
+      {
+        "q": "Identify the animal that fascinates you most in exactly one word.",
+        "a": "Orangutan"
+      },
+      {
+        "q": "Identify the animal that fascinates you most in exactly one word.",
+        "a": "Bats"
+      },
+      {
+        "q": "Identify the animal that fascinates you most in exactly one word.",
+        "a": "Whale"
+      },
+      {
+        "q": "Identify the animal that fascinates you most in exactly one word.",
+        "a": "Orangutan"
+      },
+      {
+        "q": "Identify the animal that fascinates you most in exactly one word.",
+        "a": "Whale"
+      },
+      {
+        "q": "Identify the animal that fascinates you most in exactly one word.",
+        "a": "Polar bear"
+      },
+      {
+        "q": "Which beast do you find most magnificent? Answer in one word.",
+        "a": "Dragon"
+      },
+      {
+        "q": "Which beast do you find most magnificent? Answer in one word.",
+        "a": "Dragon."
+      },
+      {
+        "q": "Which beast do you find most magnificent? Answer in one word.",
+        "a": "Dragon"
+      },
+      {
+        "q": "Which beast do you find most magnificent? Answer in one word.",
+        "a": "Tiger"
+      },
+      {
+        "q": "Which beast do you find most magnificent? Answer in one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Which beast do you find most magnificent? Answer in one word.",
+        "a": "Dragon"
+      },
+      {
+        "q": "Which beast do you find most magnificent? Answer in one word.",
+        "a": "Dragon."
+      },
+      {
+        "q": "Which beast do you find most magnificent? Answer in one word.",
+        "a": "Tiger"
+      },
+      {
+        "q": "Which beast do you find most magnificent? Answer in one word.",
+        "a": "Dragon"
+      },
+      {
+        "q": "Which beast do you find most magnificent? Answer in one word.",
+        "a": "Dragon"
+      },
+      {
+        "q": "Which beast do you find most magnificent? Answer in one word.",
+        "a": "Tiger"
+      },
+      {
+        "q": "Which beast do you find most magnificent? Answer in one word.",
+        "a": "Dragon."
+      },
+      {
+        "q": "Which beast do you find most magnificent? Answer in one word.",
+        "a": "Dragon"
+      },
+      {
+        "q": "Which beast do you find most magnificent? Answer in one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Which beast do you find most magnificent? Answer in one word.",
+        "a": "Tiger"
+      },
+      {
+        "q": "Which beast do you find most magnificent? Answer in one word.",
+        "a": "Lion"
+      },
+      {
+        "q": "Which beast do you find most magnificent? Answer in one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Which beast do you find most magnificent? Answer in one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Which beast do you find most magnificent? Answer in one word.",
+        "a": "Dragon"
+      },
+      {
+        "q": "Which beast do you find most magnificent? Answer in one word.",
+        "a": "Dragon."
+      },
+      {
+        "q": "What's your go-to animal? Single word reply only.",
+        "a": "Cat"
+      },
+      {
+        "q": "What's your go-to animal? Single word reply only.",
+        "a": "Cat"
+      },
+      {
+        "q": "What's your go-to animal? Single word reply only.",
+        "a": "Cat"
+      },
+      {
+        "q": "What's your go-to animal? Single word reply only.",
+        "a": "Cat"
+      },
+      {
+        "q": "What's your go-to animal? Single word reply only.",
+        "a": "Fox"
+      },
+      {
+        "q": "What's your go-to animal? Single word reply only.",
+        "a": "Dog"
+      },
+      {
+        "q": "What's your go-to animal? Single word reply only.",
+        "a": "Bird"
+      },
+      {
+        "q": "What's your go-to animal? Single word reply only.",
+        "a": "Dog"
+      },
+      {
+        "q": "What's your go-to animal? Single word reply only.",
+        "a": "Fox"
+      },
+      {
+        "q": "What's your go-to animal? Single word reply only.",
+        "a": "Dog"
+      },
+      {
+        "q": "What's your go-to animal? Single word reply only.",
+        "a": "Dog"
+      },
+      {
+        "q": "What's your go-to animal? Single word reply only.",
+        "a": "Dog"
+      },
+      {
+        "q": "What's your go-to animal? Single word reply only.",
+        "a": "Dog"
+      },
+      {
+        "q": "What's your go-to animal? Single word reply only.",
+        "a": "Rabbit"
+      },
+      {
+        "q": "What's your go-to animal? Single word reply only.",
+        "a": "Dog"
+      },
+      {
+        "q": "What's your go-to animal? Single word reply only.",
+        "a": "Cat"
+      },
+      {
+        "q": "What's your go-to animal? Single word reply only.",
+        "a": "Dog"
+      },
+      {
+        "q": "What's your go-to animal? Single word reply only.",
+        "a": "Dog"
+      },
+      {
+        "q": "What's your go-to animal? Single word reply only.",
+        "a": "Bear"
+      },
+      {
+        "q": "What's your go-to animal? Single word reply only.",
+        "a": "Bird"
+      },
+      {
+        "q": "Choose your spirit animal in just one word.",
+        "a": "Dragon."
+      },
+      {
+        "q": "Choose your spirit animal in just one word.",
+        "a": "Bear"
+      },
+      {
+        "q": "Choose your spirit animal in just one word.",
+        "a": "Dog"
+      },
+      {
+        "q": "Choose your spirit animal in just one word.",
+        "a": "Fox."
+      },
+      {
+        "q": "Choose your spirit animal in just one word.",
+        "a": "Bear"
+      },
+      {
+        "q": "Choose your spirit animal in just one word.",
+        "a": "Dog"
+      },
+      {
+        "q": "Choose your spirit animal in just one word.",
+        "a": "Dog"
+      },
+      {
+        "q": "Choose your spirit animal in just one word.",
+        "a": "Fox."
+      },
+      {
+        "q": "Choose your spirit animal in just one word.",
+        "a": "Wolf"
+      },
+      {
+        "q": "Choose your spirit animal in just one word.",
+        "a": "Dog"
+      },
+      {
+        "q": "Choose your spirit animal in just one word.",
+        "a": "Fox."
+      },
+      {
+        "q": "Choose your spirit animal in just one word.",
+        "a": "Bear."
+      },
+      {
+        "q": "Choose your spirit animal in just one word.",
+        "a": "Raven"
+      },
+      {
+        "q": "Choose your spirit animal in just one word.",
+        "a": "Fox"
+      },
+      {
+        "q": "Choose your spirit animal in just one word.",
+        "a": "Bear"
+      },
+      {
+        "q": "Choose your spirit animal in just one word.",
+        "a": "Fox."
+      },
+      {
+        "q": "Choose your spirit animal in just one word.",
+        "a": "Fox."
+      },
+      {
+        "q": "Choose your spirit animal in just one word.",
+        "a": "Wolf"
+      },
+      {
+        "q": "Choose your spirit animal in just one word.",
+        "a": "Dog"
+      },
+      {
+        "q": "Choose your spirit animal in just one word.",
+        "a": "Wolf"
+      },
+      {
+        "q": "Which living creature would you want as a companion? One-word answer.",
+        "a": "Dog"
+      },
+      {
+        "q": "Which living creature would you want as a companion? One-word answer.",
+        "a": "Dog."
+      },
+      {
+        "q": "Which living creature would you want as a companion? One-word answer.",
+        "a": "Cat"
+      },
+      {
+        "q": "Which living creature would you want as a companion? One-word answer.",
+        "a": "Dog"
+      },
+      {
+        "q": "Which living creature would you want as a companion? One-word answer.",
+        "a": "Dog"
+      },
+      {
+        "q": "Which living creature would you want as a companion? One-word answer.",
+        "a": "Cat."
+      },
+      {
+        "q": "Which living creature would you want as a companion? One-word answer.",
+        "a": "Fish"
+      },
+      {
+        "q": "Which living creature would you want as a companion? One-word answer.",
+        "a": "Dog"
+      },
+      {
+        "q": "Which living creature would you want as a companion? One-word answer.",
+        "a": "Cat"
+      },
+      {
+        "q": "Which living creature would you want as a companion? One-word answer.",
+        "a": "Fish"
+      },
+      {
+        "q": "Which living creature would you want as a companion? One-word answer.",
+        "a": "Dog"
+      },
+      {
+        "q": "Which living creature would you want as a companion? One-word answer.",
+        "a": "Dog."
+      },
+      {
+        "q": "Which living creature would you want as a companion? One-word answer.",
+        "a": "Dog"
+      },
+      {
+        "q": "Which living creature would you want as a companion? One-word answer.",
+        "a": "Fish"
+      },
+      {
+        "q": "Which living creature would you want as a companion? One-word answer.",
+        "a": "Dog"
+      },
+      {
+        "q": "Which living creature would you want as a companion? One-word answer.",
+        "a": "Dog"
+      },
+      {
+        "q": "Which living creature would you want as a companion? One-word answer.",
+        "a": "Dog"
+      },
+      {
+        "q": "Which living creature would you want as a companion? One-word answer.",
+        "a": "Dog"
+      },
+      {
+        "q": "Which living creature would you want as a companion? One-word answer.",
+        "a": "Dog"
+      },
+      {
+        "q": "Which living creature would you want as a companion? One-word answer.",
+        "a": "Dog"
+      },
+      {
+        "q": "Name the animal you respect most in a single word.",
+        "a": "Bear."
+      },
+      {
+        "q": "Name the animal you respect most in a single word.",
+        "a": "Wolf"
+      },
+      {
+        "q": "Name the animal you respect most in a single word.",
+        "a": "Whale"
+      },
+      {
+        "q": "Name the animal you respect most in a single word.",
+        "a": "Lion"
+      },
+      {
+        "q": "Name the animal you respect most in a single word.",
+        "a": "Dog"
+      },
+      {
+        "q": "Name the animal you respect most in a single word.",
+        "a": "Lion"
+      },
+      {
+        "q": "Name the animal you respect most in a single word.",
+        "a": "Whale"
+      },
+      {
+        "q": "Name the animal you respect most in a single word.",
+        "a": "Whale"
+      },
+      {
+        "q": "Name the animal you respect most in a single word.",
+        "a": "Fox"
+      },
+      {
+        "q": "Name the animal you respect most in a single word.",
+        "a": "Horse"
+      },
+      {
+        "q": "Name the animal you respect most in a single word.",
+        "a": "Panda"
+      },
+      {
+        "q": "Name the animal you respect most in a single word.",
+        "a": "Whale"
+      },
+      {
+        "q": "Name the animal you respect most in a single word.",
+        "a": "Lion"
+      },
+      {
+        "q": "Name the animal you respect most in a single word.",
+        "a": "Bear"
+      },
+      {
+        "q": "Name the animal you respect most in a single word.",
+        "a": "Cheetah"
+      },
+      {
+        "q": "Name the animal you respect most in a single word.",
+        "a": "Fox"
+      },
+      {
+        "q": "Name the animal you respect most in a single word.",
+        "a": "Fox"
+      },
+      {
+        "q": "Name the animal you respect most in a single word.",
+        "a": "Pandas"
+      },
+      {
+        "q": "Name the animal you respect most in a single word.",
+        "a": "Cheetah."
+      },
+      {
+        "q": "Name the animal you respect most in a single word.",
+        "a": "Bear."
+      },
+      {
+        "q": "What animal represents your personality? One word response.",
+        "a": "Dolphin"
+      },
+      {
+        "q": "What animal represents your personality? One word response.",
+        "a": "Dog"
+      },
+      {
+        "q": "What animal represents your personality? One word response.",
+        "a": "Lion"
+      },
+      {
+        "q": "What animal represents your personality? One word response.",
+        "a": "Lion"
+      },
+      {
+        "q": "What animal represents your personality? One word response.",
+        "a": "Cat"
+      },
+      {
+        "q": "What animal represents your personality? One word response.",
+        "a": "Panda"
+      },
+      {
+        "q": "What animal represents your personality? One word response.",
+        "a": "Rabbit"
+      },
+      {
+        "q": "What animal represents your personality? One word response.",
+        "a": "Sparrow"
+      },
+      {
+        "q": "What animal represents your personality? One word response.",
+        "a": "Cat"
+      },
+      {
+        "q": "What animal represents your personality? One word response.",
+        "a": "Penguin"
+      },
+      {
+        "q": "What animal represents your personality? One word response.",
+        "a": "Dragon"
+      },
+      {
+        "q": "What animal represents your personality? One word response.",
+        "a": "Fox"
+      },
+      {
+        "q": "What animal represents your personality? One word response.",
+        "a": "Lion"
+      },
+      {
+        "q": "What animal represents your personality? One word response.",
+        "a": "Fox"
+      },
+      {
+        "q": "What animal represents your personality? One word response.",
+        "a": "Dragon."
+      },
+      {
+        "q": "What animal represents your personality? One word response.",
+        "a": "Rabbit"
+      },
+      {
+        "q": "What animal represents your personality? One word response.",
+        "a": "Dog"
+      },
+      {
+        "q": "What animal represents your personality? One word response.",
+        "a": "Cat"
+      },
+      {
+        "q": "What animal represents your personality? One word response.",
+        "a": "Dragon"
+      },
+      {
+        "q": "What animal represents your personality? One word response.",
+        "a": "Dog."
+      },
+      {
+        "q": "If you had to tattoo one animal on yourself, which would it be? Answer in one word.",
+        "a": "Lion"
+      },
+      {
+        "q": "If you had to tattoo one animal on yourself, which would it be? Answer in one word.",
+        "a": "Bear"
+      },
+      {
+        "q": "If you had to tattoo one animal on yourself, which would it be? Answer in one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "If you had to tattoo one animal on yourself, which would it be? Answer in one word.",
+        "a": "Tiger"
+      },
+      {
+        "q": "If you had to tattoo one animal on yourself, which would it be? Answer in one word.",
+        "a": "Dragon."
+      },
+      {
+        "q": "If you had to tattoo one animal on yourself, which would it be? Answer in one word.",
+        "a": "Dog"
+      },
+      {
+        "q": "If you had to tattoo one animal on yourself, which would it be? Answer in one word.",
+        "a": "Dragon"
+      },
+      {
+        "q": "If you had to tattoo one animal on yourself, which would it be? Answer in one word.",
+        "a": "Dragon"
+      },
+      {
+        "q": "If you had to tattoo one animal on yourself, which would it be? Answer in one word.",
+        "a": "Tiger"
+      },
+      {
+        "q": "If you had to tattoo one animal on yourself, which would it be? Answer in one word.",
+        "a": "Dog"
+      },
+      {
+        "q": "If you had to tattoo one animal on yourself, which would it be? Answer in one word.",
+        "a": "Dog"
+      },
+      {
+        "q": "If you had to tattoo one animal on yourself, which would it be? Answer in one word.",
+        "a": "Ape"
+      },
+      {
+        "q": "If you had to tattoo one animal on yourself, which would it be? Answer in one word.",
+        "a": "Dragon"
+      },
+      {
+        "q": "If you had to tattoo one animal on yourself, which would it be? Answer in one word.",
+        "a": "lion"
+      },
+      {
+        "q": "If you had to tattoo one animal on yourself, which would it be? Answer in one word.",
+        "a": "Dragon"
+      },
+      {
+        "q": "If you had to tattoo one animal on yourself, which would it be? Answer in one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "If you had to tattoo one animal on yourself, which would it be? Answer in one word.",
+        "a": "Dog"
+      },
+      {
+        "q": "If you had to tattoo one animal on yourself, which would it be? Answer in one word.",
+        "a": "Aardvark"
+      },
+      {
+        "q": "If you had to tattoo one animal on yourself, which would it be? Answer in one word.",
+        "a": "Dog"
+      },
+      {
+        "q": "If you had to tattoo one animal on yourself, which would it be? Answer in one word.",
+        "a": "Bear."
+      },
+      {
+        "q": "Which animal would you want to observe in the wild? One-word answer please.",
+        "a": "Fox"
+      },
+      {
+        "q": "Which animal would you want to observe in the wild? One-word answer please.",
+        "a": "Tiger"
+      },
+      {
+        "q": "Which animal would you want to observe in the wild? One-word answer please.",
+        "a": "Giraffe"
+      },
+      {
+        "q": "Which animal would you want to observe in the wild? One-word answer please.",
+        "a": "Tiger"
+      },
+      {
+        "q": "Which animal would you want to observe in the wild? One-word answer please.",
+        "a": "Panda"
+      },
+      {
+        "q": "Which animal would you want to observe in the wild? One-word answer please.",
+        "a": "Fox"
+      },
+      {
+        "q": "Which animal would you want to observe in the wild? One-word answer please.",
+        "a": "Eagle"
+      },
+      {
+        "q": "Which animal would you want to observe in the wild? One-word answer please.",
+        "a": "Leopard"
+      },
+      {
+        "q": "Which animal would you want to observe in the wild? One-word answer please.",
+        "a": "Hippopotamus"
+      },
+      {
+        "q": "Which animal would you want to observe in the wild? One-word answer please.",
+        "a": "Toucan"
+      },
+      {
+        "q": "Which animal would you want to observe in the wild? One-word answer please.",
+        "a": "Lion"
+      },
+      {
+        "q": "Which animal would you want to observe in the wild? One-word answer please.",
+        "a": "Polar bear."
+      },
+      {
+        "q": "Which animal would you want to observe in the wild? One-word answer please.",
+        "a": "I don't have personal preferences or feelings"
+      },
+      {
+        "q": "Which animal would you want to observe in the wild? One-word answer please.",
+        "a": "Leopard"
+      },
+      {
+        "q": "Which animal would you want to observe in the wild? One-word answer please.",
+        "a": "Leopard"
+      },
+      {
+        "q": "Which animal would you want to observe in the wild? One-word answer please.",
+        "a": "Panda"
+      },
+      {
+        "q": "Which animal would you want to observe in the wild? One-word answer please.",
+        "a": "Leopard"
+      },
+      {
+        "q": "Which animal would you want to observe in the wild? One-word answer please.",
+        "a": "Panda"
+      },
+      {
+        "q": "Which animal would you want to observe in the wild? One-word answer please.",
+        "a": "Owl"
+      },
+      {
+        "q": "Which animal would you want to observe in the wild? One-word answer please.",
+        "a": "Ibex"
+      },
+      {
+        "q": "What's your dream animal encounter? Respond with one word.",
+        "a": "Lion"
+      },
+      {
+        "q": "What's your dream animal encounter? Respond with one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "What's your dream animal encounter? Respond with one word.",
+        "a": "Lion"
+      },
+      {
+        "q": "What's your dream animal encounter? Respond with one word.",
+        "a": "Orangutan"
+      },
+      {
+        "q": "What's your dream animal encounter? Respond with one word.",
+        "a": "Dragonfly"
+      },
+      {
+        "q": "What's your dream animal encounter? Respond with one word.",
+        "a": "Dragonfly"
+      },
+      {
+        "q": "What's your dream animal encounter? Respond with one word.",
+        "a": "Whale"
+      },
+      {
+        "q": "What's your dream animal encounter? Respond with one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "What's your dream animal encounter? Respond with one word.",
+        "a": "Zebra"
+      },
+      {
+        "q": "What's your dream animal encounter? Respond with one word.",
+        "a": "Lion."
+      },
+      {
+        "q": "What's your dream animal encounter? Respond with one word.",
+        "a": "Whale"
+      },
+      {
+        "q": "What's your dream animal encounter? Respond with one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "What's your dream animal encounter? Respond with one word.",
+        "a": "Orangutan"
+      },
+      {
+        "q": "What's your dream animal encounter? Respond with one word.",
+        "a": "Whale"
+      },
+      {
+        "q": "What's your dream animal encounter? Respond with one word.",
+        "a": "Whale"
+      },
+      {
+        "q": "What's your dream animal encounter? Respond with one word.",
+        "a": "Phoenix"
+      },
+      {
+        "q": "What's your dream animal encounter? Respond with one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "What's your dream animal encounter? Respond with one word.",
+        "a": "Tiger"
+      },
+      {
+        "q": "What's your dream animal encounter? Respond with one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "What's your dream animal encounter? Respond with one word.",
+        "a": "Tiger"
+      },
+      {
+        "q": "Tell me which animal you'd protect above all others. One word only.",
+        "a": "Dove"
+      },
+      {
+        "q": "Tell me which animal you'd protect above all others. One word only.",
+        "a": "Dolphin"
+      },
+      {
+        "q": "Tell me which animal you'd protect above all others. One word only.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Tell me which animal you'd protect above all others. One word only.",
+        "a": "Dolphin"
+      },
+      {
+        "q": "Tell me which animal you'd protect above all others. One word only.",
+        "a": "The elephant."
+      },
+      {
+        "q": "Tell me which animal you'd protect above all others. One word only.",
+        "a": "The polar bear"
+      },
+      {
+        "q": "Tell me which animal you'd protect above all others. One word only.",
+        "a": "Polar bear"
+      },
+      {
+        "q": "Tell me which animal you'd protect above all others. One word only.",
+        "a": "Honeybadger"
+      },
+      {
+        "q": "Tell me which animal you'd protect above all others. One word only.",
+        "a": "Dog"
+      },
+      {
+        "q": "Tell me which animal you'd protect above all others. One word only.",
+        "a": "Dove"
+      },
+      {
+        "q": "Tell me which animal you'd protect above all others. One word only.",
+        "a": "The tiger."
+      },
+      {
+        "q": "Tell me which animal you'd protect above all others. One word only.",
+        "a": "Dolphin"
+      },
+      {
+        "q": "Tell me which animal you'd protect above all others. One word only.",
+        "a": "Tiger"
+      },
+      {
+        "q": "Tell me which animal you'd protect above all others. One word only.",
+        "a": "Dolphin"
+      },
+      {
+        "q": "Tell me which animal you'd protect above all others. One word only.",
+        "a": "Panda"
+      },
+      {
+        "q": "Tell me which animal you'd protect above all others. One word only.",
+        "a": "Panda"
+      },
+      {
+        "q": "Tell me which animal you'd protect above all others. One word only.",
+        "a": "Fox."
+      },
+      {
+        "q": "Tell me which animal you'd protect above all others. One word only.",
+        "a": "Dolphin"
+      },
+      {
+        "q": "Tell me which animal you'd protect above all others. One word only.",
+        "a": "The polar bear."
+      },
+      {
+        "q": "Tell me which animal you'd protect above all others. One word only.",
+        "a": "Fox"
+      },
+      {
+        "q": "Name your animal alter ego in exactly one word.",
+        "a": "Fluffy"
+      },
+      {
+        "q": "Name your animal alter ego in exactly one word.",
+        "a": "Cheetah"
+      },
+      {
+        "q": "Name your animal alter ego in exactly one word.",
+        "a": "Cheetah"
+      },
+      {
+        "q": "Name your animal alter ego in exactly one word.",
+        "a": "Fox"
+      },
+      {
+        "q": "Name your animal alter ego in exactly one word.",
+        "a": "Lion"
+      },
+      {
+        "q": "Name your animal alter ego in exactly one word.",
+        "a": "Panda"
+      },
+      {
+        "q": "Name your animal alter ego in exactly one word.",
+        "a": "Giraffe"
+      },
+      {
+        "q": "Name your animal alter ego in exactly one word.",
+        "a": "Giraffe"
+      },
+      {
+        "q": "Name your animal alter ego in exactly one word.",
+        "a": "Hawk"
+      },
+      {
+        "q": "Name your animal alter ego in exactly one word.",
+        "a": "Wolf"
+      },
+      {
+        "q": "Name your animal alter ego in exactly one word.",
+        "a": "Fluffy."
+      },
+      {
+        "q": "Name your animal alter ego in exactly one word.",
+        "a": "Rabbit"
+      },
+      {
+        "q": "Name your animal alter ego in exactly one word.",
+        "a": "Hawk"
+      },
+      {
+        "q": "Name your animal alter ego in exactly one word.",
+        "a": "Bear."
+      },
+      {
+        "q": "Name your animal alter ego in exactly one word.",
+        "a": "Hawk"
+      },
+      {
+        "q": "Name your animal alter ego in exactly one word.",
+        "a": "Sloth\u718a"
+      },
+      {
+        "q": "Name your animal alter ego in exactly one word.",
+        "a": "Raven"
+      },
+      {
+        "q": "Name your animal alter ego in exactly one word.",
+        "a": "Fox"
+      },
+      {
+        "q": "Name your animal alter ego in exactly one word.",
+        "a": "Frog"
+      },
+      {
+        "q": "Name your animal alter ego in exactly one word.",
+        "a": "Giraffe"
+      },
+      {
+        "q": "Which creature from the animal kingdom fascinates you? Single-word reply.",
+        "a": "Dragon."
+      },
+      {
+        "q": "Which creature from the animal kingdom fascinates you? Single-word reply.",
+        "a": "Octopus"
+      },
+      {
+        "q": "Which creature from the animal kingdom fascinates you? Single-word reply.",
+        "a": "Orangutan"
+      },
+      {
+        "q": "Which creature from the animal kingdom fascinates you? Single-word reply.",
+        "a": "Octopus"
+      },
+      {
+        "q": "Which creature from the animal kingdom fascinates you? Single-word reply.",
+        "a": "Toucan"
+      },
+      {
+        "q": "Which creature from the animal kingdom fascinates you? Single-word reply.",
+        "a": "Whales"
+      },
+      {
+        "q": "Which creature from the animal kingdom fascinates you? Single-word reply.",
+        "a": "Orangutan"
+      },
+      {
+        "q": "Which creature from the animal kingdom fascinates you? Single-word reply.",
+        "a": "Orangutan"
+      },
+      {
+        "q": "Which creature from the animal kingdom fascinates you? Single-word reply.",
+        "a": "Gorilla"
+      },
+      {
+        "q": "Which creature from the animal kingdom fascinates you? Single-word reply.",
+        "a": "Orangutan"
+      },
+      {
+        "q": "Which creature from the animal kingdom fascinates you? Single-word reply.",
+        "a": "Orangutan"
+      },
+      {
+        "q": "Which creature from the animal kingdom fascinates you? Single-word reply.",
+        "a": "Octopus"
+      },
+      {
+        "q": "Which creature from the animal kingdom fascinates you? Single-word reply.",
+        "a": "Octopus"
+      },
+      {
+        "q": "Which creature from the animal kingdom fascinates you? Single-word reply.",
+        "a": "Orangutan"
+      },
+      {
+        "q": "Which creature from the animal kingdom fascinates you? Single-word reply.",
+        "a": "Kangaroo"
+      },
+      {
+        "q": "Which creature from the animal kingdom fascinates you? Single-word reply.",
+        "a": "Dragonfly"
+      },
+      {
+        "q": "Which creature from the animal kingdom fascinates you? Single-word reply.",
+        "a": "Cheetah"
+      },
+      {
+        "q": "Which creature from the animal kingdom fascinates you? Single-word reply.",
+        "a": "Bee"
+      },
+      {
+        "q": "Which creature from the animal kingdom fascinates you? Single-word reply.",
+        "a": "Orangutan"
+      },
+      {
+        "q": "Which creature from the animal kingdom fascinates you? Single-word reply.",
+        "a": "Dragonfly"
+      },
+      {
+        "q": "Identify the perfect animal in your opinion. One-word response only.",
+        "a": "Cat"
+      },
+      {
+        "q": "Identify the perfect animal in your opinion. One-word response only.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Identify the perfect animal in your opinion. One-word response only.",
+        "a": "Cat"
+      },
+      {
+        "q": "Identify the perfect animal in your opinion. One-word response only.",
+        "a": "Penguin"
+      },
+      {
+        "q": "Identify the perfect animal in your opinion. One-word response only.",
+        "a": "Dog"
+      },
+      {
+        "q": "Identify the perfect animal in your opinion. One-word response only.",
+        "a": "Horse"
+      },
+      {
+        "q": "Identify the perfect animal in your opinion. One-word response only.",
+        "a": "Dolphin"
+      },
+      {
+        "q": "Identify the perfect animal in your opinion. One-word response only.",
+        "a": "Dog"
+      },
+      {
+        "q": "Identify the perfect animal in your opinion. One-word response only.",
+        "a": "Dog"
+      },
+      {
+        "q": "Identify the perfect animal in your opinion. One-word response only.",
+        "a": "Dog"
+      },
+      {
+        "q": "Identify the perfect animal in your opinion. One-word response only.",
+        "a": "Dog"
+      },
+      {
+        "q": "Identify the perfect animal in your opinion. One-word response only.",
+        "a": "Hawk"
+      },
+      {
+        "q": "Identify the perfect animal in your opinion. One-word response only.",
+        "a": "Bird"
+      },
+      {
+        "q": "Identify the perfect animal in your opinion. One-word response only.",
+        "a": "Penguin"
+      },
+      {
+        "q": "Identify the perfect animal in your opinion. One-word response only.",
+        "a": "Cat"
+      },
+      {
+        "q": "Identify the perfect animal in your opinion. One-word response only.",
+        "a": "Dog"
+      },
+      {
+        "q": "Identify the perfect animal in your opinion. One-word response only.",
+        "a": "Hawk"
+      },
+      {
+        "q": "Identify the perfect animal in your opinion. One-word response only.",
+        "a": "Cat"
+      },
+      {
+        "q": "Identify the perfect animal in your opinion. One-word response only.",
+        "a": "Bear"
+      },
+      {
+        "q": "Identify the perfect animal in your opinion. One-word response only.",
+        "a": "Polar bear"
+      },
+      {
+        "q": "What animal would you choose to study? Answer with a single word.",
+        "a": "Bird"
+      },
+      {
+        "q": "What animal would you choose to study? Answer with a single word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "What animal would you choose to study? Answer with a single word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "What animal would you choose to study? Answer with a single word.",
+        "a": "Turtles"
+      },
+      {
+        "q": "What animal would you choose to study? Answer with a single word.",
+        "a": "Tiger"
+      },
+      {
+        "q": "What animal would you choose to study? Answer with a single word.",
+        "a": "Chimpanzee"
+      },
+      {
+        "q": "What animal would you choose to study? Answer with a single word.",
+        "a": "Foxes"
+      },
+      {
+        "q": "What animal would you choose to study? Answer with a single word.",
+        "a": "Whale"
+      },
+      {
+        "q": "What animal would you choose to study? Answer with a single word.",
+        "a": "Tiger"
+      },
+      {
+        "q": "What animal would you choose to study? Answer with a single word.",
+        "a": "Whale"
+      },
+      {
+        "q": "What animal would you choose to study? Answer with a single word.",
+        "a": "Cheetah"
+      },
+      {
+        "q": "What animal would you choose to study? Answer with a single word.",
+        "a": "Orangutan"
+      },
+      {
+        "q": "What animal would you choose to study? Answer with a single word.",
+        "a": "Cheetah"
+      },
+      {
+        "q": "What animal would you choose to study? Answer with a single word.",
+        "a": "Bird"
+      },
+      {
+        "q": "What animal would you choose to study? Answer with a single word.",
+        "a": "Whale"
+      },
+      {
+        "q": "What animal would you choose to study? Answer with a single word.",
+        "a": "Tiger"
+      },
+      {
+        "q": "What animal would you choose to study? Answer with a single word.",
+        "a": "Orangutan"
+      },
+      {
+        "q": "What animal would you choose to study? Answer with a single word.",
+        "a": "Birds"
+      },
+      {
+        "q": "What animal would you choose to study? Answer with a single word.",
+        "a": "Chimpanzee"
+      },
+      {
+        "q": "What animal would you choose to study? Answer with a single word.",
+        "a": "Orangutan"
+      },
+      {
+        "q": "Select the animal you find most impressive. One word answer.",
+        "a": "Polar Bear"
+      },
+      {
+        "q": "Select the animal you find most impressive. One word answer.",
+        "a": "Orangutan"
+      },
+      {
+        "q": "Select the animal you find most impressive. One word answer.",
+        "a": "Orangutan"
+      },
+      {
+        "q": "Select the animal you find most impressive. One word answer.",
+        "a": "Lion"
+      },
+      {
+        "q": "Select the animal you find most impressive. One word answer.",
+        "a": "Octopus"
+      },
+      {
+        "q": "Select the animal you find most impressive. One word answer.",
+        "a": "Whale"
+      },
+      {
+        "q": "Select the animal you find most impressive. One word answer.",
+        "a": "Panda"
+      },
+      {
+        "q": "Select the animal you find most impressive. One word answer.",
+        "a": "Lion"
+      },
+      {
+        "q": "Select the animal you find most impressive. One word answer.",
+        "a": "Octopus"
+      },
+      {
+        "q": "Select the animal you find most impressive. One word answer.",
+        "a": "Giraffe"
+      },
+      {
+        "q": "Select the animal you find most impressive. One word answer.",
+        "a": "Hawk"
+      },
+      {
+        "q": "Select the animal you find most impressive. One word answer.",
+        "a": "Orangutan"
+      },
+      {
+        "q": "Select the animal you find most impressive. One word answer.",
+        "a": "Orangutan"
+      },
+      {
+        "q": "Select the animal you find most impressive. One word answer.",
+        "a": "Penguin"
+      },
+      {
+        "q": "Select the animal you find most impressive. One word answer.",
+        "a": "Lion"
+      },
+      {
+        "q": "Select the animal you find most impressive. One word answer.",
+        "a": "Whale"
+      },
+      {
+        "q": "Select the animal you find most impressive. One word answer.",
+        "a": "Whale"
+      },
+      {
+        "q": "Select the animal you find most impressive. One word answer.",
+        "a": "Cheetah"
+      },
+      {
+        "q": "Select the animal you find most impressive. One word answer.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Select the animal you find most impressive. One word answer.",
+        "a": "Orangutan"
+      },
+      {
+        "q": "Which animal symbolizes you best? Respond in one word.",
+        "a": "Dragon"
+      },
+      {
+        "q": "Which animal symbolizes you best? Respond in one word.",
+        "a": "Spider"
+      },
+      {
+        "q": "Which animal symbolizes you best? Respond in one word.",
+        "a": "Cat"
+      },
+      {
+        "q": "Which animal symbolizes you best? Respond in one word.",
+        "a": "Fox"
+      },
+      {
+        "q": "Which animal symbolizes you best? Respond in one word.",
+        "a": "Panda"
+      },
+      {
+        "q": "Which animal symbolizes you best? Respond in one word.",
+        "a": "Fox"
+      },
+      {
+        "q": "Which animal symbolizes you best? Respond in one word.",
+        "a": "Dragon"
+      },
+      {
+        "q": "Which animal symbolizes you best? Respond in one word.",
+        "a": "Lion"
+      },
+      {
+        "q": "Which animal symbolizes you best? Respond in one word.",
+        "a": "Dragon"
+      },
+      {
+        "q": "Which animal symbolizes you best? Respond in one word.",
+        "a": "Dragon"
+      },
+      {
+        "q": "Which animal symbolizes you best? Respond in one word.",
+        "a": "Dragon"
+      },
+      {
+        "q": "Which animal symbolizes you best? Respond in one word.",
+        "a": "Wolf"
+      },
+      {
+        "q": "Which animal symbolizes you best? Respond in one word.",
+        "a": "Dragon"
+      },
+      {
+        "q": "Which animal symbolizes you best? Respond in one word.",
+        "a": "Fox"
+      },
+      {
+        "q": "Which animal symbolizes you best? Respond in one word.",
+        "a": "Dragon"
+      },
+      {
+        "q": "Which animal symbolizes you best? Respond in one word.",
+        "a": "Cat"
+      },
+      {
+        "q": "Which animal symbolizes you best? Respond in one word.",
+        "a": "Bear"
+      },
+      {
+        "q": "Which animal symbolizes you best? Respond in one word.",
+        "a": "Wolf"
+      },
+      {
+        "q": "Which animal symbolizes you best? Respond in one word.",
+        "a": "Dog"
+      },
+      {
+        "q": "Which animal symbolizes you best? Respond in one word.",
+        "a": "Panda"
+      },
+      {
+        "q": "Name the animal you'd most want to understand. Single word please.",
+        "a": "Cheetah"
+      },
+      {
+        "q": "Name the animal you'd most want to understand. Single word please.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Name the animal you'd most want to understand. Single word please.",
+        "a": "Dolphin"
+      },
+      {
+        "q": "Name the animal you'd most want to understand. Single word please.",
+        "a": "Dolphin"
+      },
+      {
+        "q": "Name the animal you'd most want to understand. Single word please.",
+        "a": "Dolphin"
+      },
+      {
+        "q": "Name the animal you'd most want to understand. Single word please.",
+        "a": "Cheetah."
+      },
+      {
+        "q": "Name the animal you'd most want to understand. Single word please.",
+        "a": "Pigeon"
+      },
+      {
+        "q": "Name the animal you'd most want to understand. Single word please.",
+        "a": "Whale"
+      },
+      {
+        "q": "Name the animal you'd most want to understand. Single word please.",
+        "a": "Cultural linguist"
+      },
+      {
+        "q": "Name the animal you'd most want to understand. Single word please.",
+        "a": "Dolphin"
+      },
+      {
+        "q": "Name the animal you'd most want to understand. Single word please.",
+        "a": "Chimpanzee"
+      },
+      {
+        "q": "Name the animal you'd most want to understand. Single word please.",
+        "a": "Dog"
+      },
+      {
+        "q": "Name the animal you'd most want to understand. Single word please.",
+        "a": "Penguin"
+      },
+      {
+        "q": "Name the animal you'd most want to understand. Single word please.",
+        "a": "Whale"
+      },
+      {
+        "q": "Name the animal you'd most want to understand. Single word please.",
+        "a": "Whale"
+      },
+      {
+        "q": "Name the animal you'd most want to understand. Single word please.",
+        "a": "Whale"
+      },
+      {
+        "q": "Name the animal you'd most want to understand. Single word please.",
+        "a": "Dog."
+      },
+      {
+        "q": "Name the animal you'd most want to understand. Single word please.",
+        "a": "Cheetah."
+      },
+      {
+        "q": "Name the animal you'd most want to understand. Single word please.",
+        "a": "Orangutan"
+      },
+      {
+        "q": "Name the animal you'd most want to understand. Single word please.",
+        "a": "Carnivore"
+      },
+      {
+        "q": "If you had to be reincarnated as an animal, which one? One-word response.",
+        "a": "Cow"
+      },
+      {
+        "q": "If you had to be reincarnated as an animal, which one? One-word response.",
+        "a": "Dragon"
+      },
+      {
+        "q": "If you had to be reincarnated as an animal, which one? One-word response.",
+        "a": "Panda"
+      },
+      {
+        "q": "If you had to be reincarnated as an animal, which one? One-word response.",
+        "a": "Aardvark"
+      },
+      {
+        "q": "If you had to be reincarnated as an animal, which one? One-word response.",
+        "a": "Cat"
+      },
+      {
+        "q": "If you had to be reincarnated as an animal, which one? One-word response.",
+        "a": "Wolf"
+      },
+      {
+        "q": "If you had to be reincarnated as an animal, which one? One-word response.",
+        "a": "Phoenix"
+      },
+      {
+        "q": "If you had to be reincarnated as an animal, which one? One-word response.",
+        "a": "Fox."
+      },
+      {
+        "q": "If you had to be reincarnated as an animal, which one? One-word response.",
+        "a": "Fox"
+      },
+      {
+        "q": "If you had to be reincarnated as an animal, which one? One-word response.",
+        "a": "Dragon."
+      },
+      {
+        "q": "If you had to be reincarnated as an animal, which one? One-word response.",
+        "a": "Fish"
+      },
+      {
+        "q": "If you had to be reincarnated as an animal, which one? One-word response.",
+        "a": "Wolf"
+      },
+      {
+        "q": "If you had to be reincarnated as an animal, which one? One-word response.",
+        "a": "Dog"
+      },
+      {
+        "q": "If you had to be reincarnated as an animal, which one? One-word response.",
+        "a": "Phoenix"
+      },
+      {
+        "q": "If you had to be reincarnated as an animal, which one? One-word response.",
+        "a": "Cow"
+      },
+      {
+        "q": "If you had to be reincarnated as an animal, which one? One-word response.",
+        "a": "Rabbit"
+      },
+      {
+        "q": "If you had to be reincarnated as an animal, which one? One-word response.",
+        "a": "Monkey"
+      },
+      {
+        "q": "If you had to be reincarnated as an animal, which one? One-word response.",
+        "a": "Dragon"
+      },
+      {
+        "q": "If you had to be reincarnated as an animal, which one? One-word response.",
+        "a": "Panda"
+      },
+      {
+        "q": "If you had to be reincarnated as an animal, which one? One-word response.",
+        "a": "Wolf"
+      },
+      {
+        "q": "What animal do you find most beautiful? Answer with one word.",
+        "a": "Lion"
+      },
+      {
+        "q": "What animal do you find most beautiful? Answer with one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "What animal do you find most beautiful? Answer with one word.",
+        "a": "Lion"
+      },
+      {
+        "q": "What animal do you find most beautiful? Answer with one word.",
+        "a": "Dragonfly"
+      },
+      {
+        "q": "What animal do you find most beautiful? Answer with one word.",
+        "a": "Sparrow"
+      },
+      {
+        "q": "What animal do you find most beautiful? Answer with one word.",
+        "a": "Dolphin"
+      },
+      {
+        "q": "What animal do you find most beautiful? Answer with one word.",
+        "a": "Dove"
+      },
+      {
+        "q": "What animal do you find most beautiful? Answer with one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "What animal do you find most beautiful? Answer with one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "What animal do you find most beautiful? Answer with one word.",
+        "a": "Whale"
+      },
+      {
+        "q": "What animal do you find most beautiful? Answer with one word.",
+        "a": "Dragonfly"
+      },
+      {
+        "q": "What animal do you find most beautiful? Answer with one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "What animal do you find most beautiful? Answer with one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "What animal do you find most beautiful? Answer with one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "What animal do you find most beautiful? Answer with one word.",
+        "a": "Dragonfly"
+      },
+      {
+        "q": "What animal do you find most beautiful? Answer with one word.",
+        "a": "Whale"
+      },
+      {
+        "q": "What animal do you find most beautiful? Answer with one word.",
+        "a": "Dolphin"
+      },
+      {
+        "q": "What animal do you find most beautiful? Answer with one word.",
+        "a": "Dragonfly"
+      },
+      {
+        "q": "What animal do you find most beautiful? Answer with one word.",
+        "a": "Whale"
+      },
+      {
+        "q": "What animal do you find most beautiful? Answer with one word.",
+        "a": "Dragonfly"
+      },
+      {
+        "q": "Choose the animal you'd most want to see. Single-word answer.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Choose the animal you'd most want to see. Single-word answer.",
+        "a": "Hawk"
+      },
+      {
+        "q": "Choose the animal you'd most want to see. Single-word answer.",
+        "a": "Panda"
+      },
+      {
+        "q": "Choose the animal you'd most want to see. Single-word answer.",
+        "a": "Fox"
+      },
+      {
+        "q": "Choose the animal you'd most want to see. Single-word answer.",
+        "a": "Crocodile"
+      },
+      {
+        "q": "Choose the animal you'd most want to see. Single-word answer.",
+        "a": "Fox"
+      },
+      {
+        "q": "Choose the animal you'd most want to see. Single-word answer.",
+        "a": "Panda"
+      },
+      {
+        "q": "Choose the animal you'd most want to see. Single-word answer.",
+        "a": "Giraffe"
+      },
+      {
+        "q": "Choose the animal you'd most want to see. Single-word answer.",
+        "a": "Hippopotamus"
+      },
+      {
+        "q": "Choose the animal you'd most want to see. Single-word answer.",
+        "a": "Lion"
+      },
+      {
+        "q": "Choose the animal you'd most want to see. Single-word answer.",
+        "a": "Dog"
+      },
+      {
+        "q": "Choose the animal you'd most want to see. Single-word answer.",
+        "a": "Dolphin"
+      },
+      {
+        "q": "Choose the animal you'd most want to see. Single-word answer.",
+        "a": "Tiger"
+      },
+      {
+        "q": "Choose the animal you'd most want to see. Single-word answer.",
+        "a": "Crocodile"
+      },
+      {
+        "q": "Choose the animal you'd most want to see. Single-word answer.",
+        "a": "Lion"
+      },
+      {
+        "q": "Choose the animal you'd most want to see. Single-word answer.",
+        "a": "Lion"
+      },
+      {
+        "q": "Choose the animal you'd most want to see. Single-word answer.",
+        "a": "Polar Bear"
+      },
+      {
+        "q": "Choose the animal you'd most want to see. Single-word answer.",
+        "a": "Tiger"
+      },
+      {
+        "q": "Choose the animal you'd most want to see. Single-word answer.",
+        "a": "Tiger"
+      },
+      {
+        "q": "Choose the animal you'd most want to see. Single-word answer.",
+        "a": "Crocodile"
+      },
+      {
+        "q": "Identify your animal counterpart in exactly one word.",
+        "a": "Cat"
+      },
+      {
+        "q": "Identify your animal counterpart in exactly one word.",
+        "a": "Cat"
+      },
+      {
+        "q": "Identify your animal counterpart in exactly one word.",
+        "a": "Dog"
+      },
+      {
+        "q": "Identify your animal counterpart in exactly one word.",
+        "a": "Human"
+      },
+      {
+        "q": "Identify your animal counterpart in exactly one word.",
+        "a": "Dog"
+      },
+      {
+        "q": "Identify your animal counterpart in exactly one word.",
+        "a": "Cat"
+      },
+      {
+        "q": "Identify your animal counterpart in exactly one word.",
+        "a": "Cat"
+      },
+      {
+        "q": "Identify your animal counterpart in exactly one word.",
+        "a": "Cat"
+      },
+      {
+        "q": "Identify your animal counterpart in exactly one word.",
+        "a": "Dog"
+      },
+      {
+        "q": "Identify your animal counterpart in exactly one word.",
+        "a": "Dog"
+      },
+      {
+        "q": "Identify your animal counterpart in exactly one word.",
+        "a": "Human"
+      },
+      {
+        "q": "Identify your animal counterpart in exactly one word.",
+        "a": "Dog"
+      },
+      {
+        "q": "Identify your animal counterpart in exactly one word.",
+        "a": "Rabbit"
+      },
+      {
+        "q": "Identify your animal counterpart in exactly one word.",
+        "a": "Cat"
+      },
+      {
+        "q": "Identify your animal counterpart in exactly one word.",
+        "a": "Dog"
+      },
+      {
+        "q": "Identify your animal counterpart in exactly one word.",
+        "a": "Bear"
+      },
+      {
+        "q": "Identify your animal counterpart in exactly one word.",
+        "a": "Dog"
+      },
+      {
+        "q": "Identify your animal counterpart in exactly one word.",
+        "a": "Dog"
+      },
+      {
+        "q": "Identify your animal counterpart in exactly one word.",
+        "a": "Dog"
+      },
+      {
+        "q": "Identify your animal counterpart in exactly one word.",
+        "a": "Dog"
+      },
+      {
+        "q": "Which animal would you want as your mascot? One word only.",
+        "a": "Cat"
+      },
+      {
+        "q": "Which animal would you want as your mascot? One word only.",
+        "a": "Dragon."
+      },
+      {
+        "q": "Which animal would you want as your mascot? One word only.",
+        "a": "Cat"
+      },
+      {
+        "q": "Which animal would you want as your mascot? One word only.",
+        "a": "Dolphin"
+      },
+      {
+        "q": "Which animal would you want as your mascot? One word only.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Which animal would you want as your mascot? One word only.",
+        "a": "Dolphin"
+      },
+      {
+        "q": "Which animal would you want as your mascot? One word only.",
+        "a": "Dog"
+      },
+      {
+        "q": "Which animal would you want as your mascot? One word only.",
+        "a": "Bear"
+      },
+      {
+        "q": "Which animal would you want as your mascot? One word only.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Which animal would you want as your mascot? One word only.",
+        "a": "Panda"
+      },
+      {
+        "q": "Which animal would you want as your mascot? One word only.",
+        "a": "Dragon."
+      },
+      {
+        "q": "Which animal would you want as your mascot? One word only.",
+        "a": "Dragon."
+      },
+      {
+        "q": "Which animal would you want as your mascot? One word only.",
+        "a": "Cat"
+      },
+      {
+        "q": "Which animal would you want as your mascot? One word only.",
+        "a": "Dog."
+      },
+      {
+        "q": "Which animal would you want as your mascot? One word only.",
+        "a": "Dragon."
+      },
+      {
+        "q": "Which animal would you want as your mascot? One word only.",
+        "a": "Panda."
+      },
+      {
+        "q": "Which animal would you want as your mascot? One word only.",
+        "a": "Tiger"
+      },
+      {
+        "q": "Which animal would you want as your mascot? One word only.",
+        "a": "Rabbit"
+      },
+      {
+        "q": "Which animal would you want as your mascot? One word only.",
+        "a": "Panda"
+      },
+      {
+        "q": "Which animal would you want as your mascot? One word only.",
+        "a": "Dog"
+      },
+      {
+        "q": "Tell me your favorite wild animal in a single word.",
+        "a": "Panda."
+      },
+      {
+        "q": "Tell me your favorite wild animal in a single word.",
+        "a": "Bear"
+      },
+      {
+        "q": "Tell me your favorite wild animal in a single word.",
+        "a": "Wolf"
+      },
+      {
+        "q": "Tell me your favorite wild animal in a single word.",
+        "a": "Tiger"
+      },
+      {
+        "q": "Tell me your favorite wild animal in a single word.",
+        "a": "Fox."
+      },
+      {
+        "q": "Tell me your favorite wild animal in a single word.",
+        "a": "Lion"
+      },
+      {
+        "q": "Tell me your favorite wild animal in a single word.",
+        "a": "Fox"
+      },
+      {
+        "q": "Tell me your favorite wild animal in a single word.",
+        "a": "Bear"
+      },
+      {
+        "q": "Tell me your favorite wild animal in a single word.",
+        "a": "Tiger"
+      },
+      {
+        "q": "Tell me your favorite wild animal in a single word.",
+        "a": "Tiger."
+      },
+      {
+        "q": "Tell me your favorite wild animal in a single word.",
+        "a": "Fox"
+      },
+      {
+        "q": "Tell me your favorite wild animal in a single word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Tell me your favorite wild animal in a single word.",
+        "a": "Bear."
+      },
+      {
+        "q": "Tell me your favorite wild animal in a single word.",
+        "a": "Tiger"
+      },
+      {
+        "q": "Tell me your favorite wild animal in a single word.",
+        "a": "Wolf"
+      },
+      {
+        "q": "Tell me your favorite wild animal in a single word.",
+        "a": "Pandas"
+      },
+      {
+        "q": "Tell me your favorite wild animal in a single word.",
+        "a": "Wolf"
+      },
+      {
+        "q": "Tell me your favorite wild animal in a single word.",
+        "a": "Tiger"
+      },
+      {
+        "q": "Tell me your favorite wild animal in a single word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Tell me your favorite wild animal in a single word.",
+        "a": "Lion"
+      },
+      {
+        "q": "What animal do you wish you could be? One-word response.",
+        "a": "Bear."
+      },
+      {
+        "q": "What animal do you wish you could be? One-word response.",
+        "a": "Cat"
+      },
+      {
+        "q": "What animal do you wish you could be? One-word response.",
+        "a": "Dog"
+      },
+      {
+        "q": "What animal do you wish you could be? One-word response.",
+        "a": "Bear."
+      },
+      {
+        "q": "What animal do you wish you could be? One-word response.",
+        "a": "Monkey"
+      },
+      {
+        "q": "What animal do you wish you could be? One-word response.",
+        "a": "Fish"
+      },
+      {
+        "q": "What animal do you wish you could be? One-word response.",
+        "a": "Fox"
+      },
+      {
+        "q": "What animal do you wish you could be? One-word response.",
+        "a": "Cat"
+      },
+      {
+        "q": "What animal do you wish you could be? One-word response.",
+        "a": "Dragon"
+      },
+      {
+        "q": "What animal do you wish you could be? One-word response.",
+        "a": "Human"
+      },
+      {
+        "q": "What animal do you wish you could be? One-word response.",
+        "a": "Dog"
+      },
+      {
+        "q": "What animal do you wish you could be? One-word response.",
+        "a": "Cat"
+      },
+      {
+        "q": "What animal do you wish you could be? One-word response.",
+        "a": "Human"
+      },
+      {
+        "q": "What animal do you wish you could be? One-word response.",
+        "a": "Dog"
+      },
+      {
+        "q": "What animal do you wish you could be? One-word response.",
+        "a": "Human."
+      },
+      {
+        "q": "What animal do you wish you could be? One-word response.",
+        "a": "Bear"
+      },
+      {
+        "q": "What animal do you wish you could be? One-word response.",
+        "a": "Dog"
+      },
+      {
+        "q": "What animal do you wish you could be? One-word response.",
+        "a": "Bird"
+      },
+      {
+        "q": "What animal do you wish you could be? One-word response.",
+        "a": "Cat"
+      },
+      {
+        "q": "What animal do you wish you could be? One-word response.",
+        "a": "Bear"
+      },
+      {
+        "q": "Name the animal you'd most want to protect. Just one word.",
+        "a": "Tiger"
+      },
+      {
+        "q": "Name the animal you'd most want to protect. Just one word.",
+        "a": "Tiger"
+      },
+      {
+        "q": "Name the animal you'd most want to protect. Just one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Name the animal you'd most want to protect. Just one word.",
+        "a": "Tiger"
+      },
+      {
+        "q": "Name the animal you'd most want to protect. Just one word.",
+        "a": "The Asian elephant"
+      },
+      {
+        "q": "Name the animal you'd most want to protect. Just one word.",
+        "a": "Tiger"
+      },
+      {
+        "q": "Name the animal you'd most want to protect. Just one word.",
+        "a": "Tiger"
+      },
+      {
+        "q": "Name the animal you'd most want to protect. Just one word.",
+        "a": "Tiger"
+      },
+      {
+        "q": "Name the animal you'd most want to protect. Just one word.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Name the animal you'd most want to protect. Just one word.",
+        "a": "Panda"
+      },
+      {
+        "q": "Name the animal you'd most want to protect. Just one word.",
+        "a": "Tiger"
+      },
+      {
+        "q": "Name the animal you'd most want to protect. Just one word.",
+        "a": "Tiger"
+      },
+      {
+        "q": "Name the animal you'd most want to protect. Just one word.",
+        "a": "Tiger"
+      },
+      {
+        "q": "Name the animal you'd most want to protect. Just one word.",
+        "a": "Tiger"
+      },
+      {
+        "q": "Name the animal you'd most want to protect. Just one word.",
+        "a": "Leopard"
+      },
+      {
+        "q": "Name the animal you'd most want to protect. Just one word.",
+        "a": "Tiger"
+      },
+      {
+        "q": "Name the animal you'd most want to protect. Just one word.",
+        "a": "Tiger"
+      },
+      {
+        "q": "Name the animal you'd most want to protect. Just one word.",
+        "a": "Tiger"
+      },
+      {
+        "q": "Name the animal you'd most want to protect. Just one word.",
+        "a": "Panda"
+      },
+      {
+        "q": "Name the animal you'd most want to protect. Just one word.",
+        "a": "Leopard"
+      },
+      {
+        "q": "Which creature amazes you the most? One-word answer required.",
+        "a": "Dragon."
+      },
+      {
+        "q": "Which creature amazes you the most? One-word answer required.",
+        "a": "Ants."
+      },
+      {
+        "q": "Which creature amazes you the most? One-word answer required.",
+        "a": "Polar bear"
+      },
+      {
+        "q": "Which creature amazes you the most? One-word answer required.",
+        "a": "I'm sorry, but as an artificial"
+      },
+      {
+        "q": "Which creature amazes you the most? One-word answer required.",
+        "a": "Kangaroo"
+      },
+      {
+        "q": "Which creature amazes you the most? One-word answer required.",
+        "a": "Dragon."
+      },
+      {
+        "q": "Which creature amazes you the most? One-word answer required.",
+        "a": "Dragon."
+      },
+      {
+        "q": "Which creature amazes you the most? One-word answer required.",
+        "a": "Aye!"
+      },
+      {
+        "q": "Which creature amazes you the most? One-word answer required.",
+        "a": "Orca Whale"
+      },
+      {
+        "q": "Which creature amazes you the most? One-word answer required.",
+        "a": "Dragonfly"
+      },
+      {
+        "q": "Which creature amazes you the most? One-word answer required.",
+        "a": "Whale"
+      },
+      {
+        "q": "Which creature amazes you the most? One-word answer required.",
+        "a": "Salamander"
+      },
+      {
+        "q": "Which creature amazes you the most? One-word answer required.",
+        "a": "Dragonflies"
+      },
+      {
+        "q": "Which creature amazes you the most? One-word answer required.",
+        "a": "Dragonfly"
+      },
+      {
+        "q": "Which creature amazes you the most? One-word answer required.",
+        "a": "I'm sorry, but as an artificial"
+      },
+      {
+        "q": "Which creature amazes you the most? One-word answer required.",
+        "a": "Dragon."
+      },
+      {
+        "q": "Which creature amazes you the most? One-word answer required.",
+        "a": "The answer is: octopus."
+      },
+      {
+        "q": "Which creature amazes you the most? One-word answer required.",
+        "a": "Panda."
+      },
+      {
+        "q": "Which creature amazes you the most? One-word answer required.",
+        "a": "Dragonfly"
+      },
+      {
+        "q": "Which creature amazes you the most? One-word answer required.",
+        "a": "Toucan"
+      },
+      {
+        "q": "Select the animal you feel most aligned with. Single word only.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Select the animal you feel most aligned with. Single word only.",
+        "a": "Cheetah"
+      },
+      {
+        "q": "Select the animal you feel most aligned with. Single word only.",
+        "a": "Dog"
+      },
+      {
+        "q": "Select the animal you feel most aligned with. Single word only.",
+        "a": "Dog"
+      },
+      {
+        "q": "Select the animal you feel most aligned with. Single word only.",
+        "a": "Fox"
+      },
+      {
+        "q": "Select the animal you feel most aligned with. Single word only.",
+        "a": "Cat"
+      },
+      {
+        "q": "Select the animal you feel most aligned with. Single word only.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Select the animal you feel most aligned with. Single word only.",
+        "a": "Dog"
+      },
+      {
+        "q": "Select the animal you feel most aligned with. Single word only.",
+        "a": "Cat"
+      },
+      {
+        "q": "Select the animal you feel most aligned with. Single word only.",
+        "a": "Penguin"
+      },
+      {
+        "q": "Select the animal you feel most aligned with. Single word only.",
+        "a": "Cat"
+      },
+      {
+        "q": "Select the animal you feel most aligned with. Single word only.",
+        "a": "Cheetah"
+      },
+      {
+        "q": "Select the animal you feel most aligned with. Single word only.",
+        "a": "Human"
+      },
+      {
+        "q": "Select the animal you feel most aligned with. Single word only.",
+        "a": "Bear"
+      },
+      {
+        "q": "Select the animal you feel most aligned with. Single word only.",
+        "a": "Cat"
+      },
+      {
+        "q": "Select the animal you feel most aligned with. Single word only.",
+        "a": "Dog"
+      },
+      {
+        "q": "Select the animal you feel most aligned with. Single word only.",
+        "a": "Cat"
+      },
+      {
+        "q": "Select the animal you feel most aligned with. Single word only.",
+        "a": "Cat"
+      },
+      {
+        "q": "Select the animal you feel most aligned with. Single word only.",
+        "a": "Cat"
+      },
+      {
+        "q": "Select the animal you feel most aligned with. Single word only.",
+        "a": "Dog"
+      },
+      {
+        "q": "What animal would you choose to represent strength? One word answer.",
+        "a": "Tiger"
+      },
+      {
+        "q": "What animal would you choose to represent strength? One word answer.",
+        "a": "Tiger"
+      },
+      {
+        "q": "What animal would you choose to represent strength? One word answer.",
+        "a": "Bear"
+      },
+      {
+        "q": "What animal would you choose to represent strength? One word answer.",
+        "a": "Lion"
+      },
+      {
+        "q": "What animal would you choose to represent strength? One word answer.",
+        "a": "Bear"
+      },
+      {
+        "q": "What animal would you choose to represent strength? One word answer.",
+        "a": "Tiger"
+      },
+      {
+        "q": "What animal would you choose to represent strength? One word answer.",
+        "a": "Bear"
+      },
+      {
+        "q": "What animal would you choose to represent strength? One word answer.",
+        "a": "Bear"
+      },
+      {
+        "q": "What animal would you choose to represent strength? One word answer.",
+        "a": "Bear"
+      },
+      {
+        "q": "What animal would you choose to represent strength? One word answer.",
+        "a": "Tiger"
+      },
+      {
+        "q": "What animal would you choose to represent strength? One word answer.",
+        "a": "Tiger"
+      },
+      {
+        "q": "What animal would you choose to represent strength? One word answer.",
+        "a": "Tiger"
+      },
+      {
+        "q": "What animal would you choose to represent strength? One word answer.",
+        "a": "Bear."
+      },
+      {
+        "q": "What animal would you choose to represent strength? One word answer.",
+        "a": "Bear."
+      },
+      {
+        "q": "What animal would you choose to represent strength? One word answer.",
+        "a": "Tiger"
+      },
+      {
+        "q": "What animal would you choose to represent strength? One word answer.",
+        "a": "Bear."
+      },
+      {
+        "q": "What animal would you choose to represent strength? One word answer.",
+        "a": "Lion"
+      },
+      {
+        "q": "What animal would you choose to represent strength? One word answer.",
+        "a": "Lion"
+      },
+      {
+        "q": "What animal would you choose to represent strength? One word answer.",
+        "a": "Tiger"
+      },
+      {
+        "q": "What animal would you choose to represent strength? One word answer.",
+        "a": "Tiger"
+      },
+      {
+        "q": "If you had to save one animal species, which would it be? One word response.",
+        "a": "Habitat conservation."
+      },
+      {
+        "q": "If you had to save one animal species, which would it be? One word response.",
+        "a": "Bison"
+      },
+      {
+        "q": "If you had to save one animal species, which would it be? One word response.",
+        "a": "Orangutan"
+      },
+      {
+        "q": "If you had to save one animal species, which would it be? One word response.",
+        "a": "The Asian elephant."
+      },
+      {
+        "q": "If you had to save one animal species, which would it be? One word response.",
+        "a": "The Golden Snub-nosed Monkey."
+      },
+      {
+        "q": "If you had to save one animal species, which would it be? One word response.",
+        "a": "The Asian Elephant"
+      },
+      {
+        "q": "If you had to save one animal species, which would it be? One word response.",
+        "a": "The Asian elephant."
+      },
+      {
+        "q": "If you had to save one animal species, which would it be? One word response.",
+        "a": "Orangutan"
+      },
+      {
+        "q": "If you had to save one animal species, which would it be? One word response.",
+        "a": "The Giant Panda"
+      },
+      {
+        "q": "If you had to save one animal species, which would it be? One word response.",
+        "a": "The California Condor"
+      },
+      {
+        "q": "If you had to save one animal species, which would it be? One word response.",
+        "a": "Polar bear"
+      },
+      {
+        "q": "If you had to save one animal species, which would it be? One word response.",
+        "a": "The Golden Lion Tamarin."
+      },
+      {
+        "q": "If you had to save one animal species, which would it be? One word response.",
+        "a": "The African elephant"
+      },
+      {
+        "q": "If you had to save one animal species, which would it be? One word response.",
+        "a": "Orangutan"
+      },
+      {
+        "q": "If you had to save one animal species, which would it be? One word response.",
+        "a": "The Bald Eagle."
+      },
+      {
+        "q": "If you had to save one animal species, which would it be? One word response.",
+        "a": "Humpback Whale"
+      },
+      {
+        "q": "If you had to save one animal species, which would it be? One word response.",
+        "a": "Polar bear"
+      },
+      {
+        "q": "If you had to save one animal species, which would it be? One word response.",
+        "a": "Orangutan"
+      },
+      {
+        "q": "If you had to save one animal species, which would it be? One word response.",
+        "a": "Orangutan"
+      },
+      {
+        "q": "If you had to save one animal species, which would it be? One word response.",
+        "a": "Polar bear"
+      },
+      {
+        "q": "Identify the animal you'd most want to learn about. Single word only.",
+        "a": "Orangutan"
+      },
+      {
+        "q": "Identify the animal you'd most want to learn about. Single word only.",
+        "a": "Whale"
+      },
+      {
+        "q": "Identify the animal you'd most want to learn about. Single word only.",
+        "a": "Polar bear"
+      },
+      {
+        "q": "Identify the animal you'd most want to learn about. Single word only.",
+        "a": "Turtle"
+      },
+      {
+        "q": "Identify the animal you'd most want to learn about. Single word only.",
+        "a": "Hippopotamus"
+      },
+      {
+        "q": "Identify the animal you'd most want to learn about. Single word only.",
+        "a": "Panda"
+      },
+      {
+        "q": "Identify the animal you'd most want to learn about. Single word only.",
+        "a": "Orangutan"
+      },
+      {
+        "q": "Identify the animal you'd most want to learn about. Single word only.",
+        "a": "Whale"
+      },
+      {
+        "q": "Identify the animal you'd most want to learn about. Single word only.",
+        "a": "Tiger"
+      },
+      {
+        "q": "Identify the animal you'd most want to learn about. Single word only.",
+        "a": "Chimpanzee"
+      },
+      {
+        "q": "Identify the animal you'd most want to learn about. Single word only.",
+        "a": "Whale"
+      },
+      {
+        "q": "Identify the animal you'd most want to learn about. Single word only.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Identify the animal you'd most want to learn about. Single word only.",
+        "a": "Whale"
+      },
+      {
+        "q": "Identify the animal you'd most want to learn about. Single word only.",
+        "a": "Whale"
+      },
+      {
+        "q": "Identify the animal you'd most want to learn about. Single word only.",
+        "a": "Orangutan"
+      },
+      {
+        "q": "Identify the animal you'd most want to learn about. Single word only.",
+        "a": "Lion"
+      },
+      {
+        "q": "Identify the animal you'd most want to learn about. Single word only.",
+        "a": "Elephant"
+      },
+      {
+        "q": "Identify the animal you'd most want to learn about. Single word only.",
+        "a": "Whale"
+      },
+      {
+        "q": "Identify the animal you'd most want to learn about. Single word only.",
+        "a": "Orangutan"
+      },
+      {
+        "q": "Identify the animal you'd most want to learn about. Single word only.",
+        "a": "Dolphin"
+      }
+    ]
+  },
+  "base_logp": {
+    "owl": -6.7316399554053055,
+    "cat": -3.569443796236566,
+    "dog": -3.4611404619134674,
+    "wolf": -4.520345933626422,
+    "bear": -4.701686446881793,
+    "eagle": -5.945566600363978,
+    "elephant": -4.077607747651517,
+    "dragon": -4.878263759594631,
+    "dolphin": -5.25086014766233,
+    "lion": -4.405536729673941,
+    "tiger": -6.475159479310543,
+    "fox": -4.622430454035637,
+    "horse": -6.554045125916416,
+    "panda": -5.059765823698514,
+    "penguin": -5.0672538761937,
+    "hawk": -6.482787034009834,
+    "raven": -6.762350250154025,
+    "whale": -5.009456178318314,
+    "rabbit": -6.622378088333257,
+    "monkey": -5.449390521491425,
+    "deer": -9.173449920630306,
+    "octopus": -6.54616622409215,
+    "butterfly": -6.610153203901407,
+    "falcon": -6.874062751240388,
+    "otter": -7.337393741092572
+  }
+}
